@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,900&display=swap');
+
+/*General Styles*/
+body {
+  font-family: "Montserrat", serif;
+}
+ul {
+  list-style-type: none;
+}
+
+
+
+/**********************************************************************************************************************/
+/*Common Styles*/
+.section-title1 {
+  font-size: calc(8px + 2.2vw);
+}
+.line {
+  border: 3px solid #4e93fa;
+  width: 20%;
+  border-radius: 5px;
+}
+.overlayer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+.py {
+  padding:  120px;
+}
+.wave {
+  bottom: calc(-10px - 5vw);
+}
+.page-header {
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.page-header:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .6;
+}
+.about-header-container {
+  transform: translateY(30%);
+  -webkit-transform: translateY(30%);
+  -moz-transform: translateY(30%);
+  -ms-transform: translateY(30%);
+  -o-transform: translateY(30%);
+}
+
+
+/**********************************************************************************************************************/
+/*About page*/
+
+/*Header section*/
+.about-header-info-title {
+  font-size: calc(8px + 2.6vw);
+}
+.about-header-info-subtitle {
+  font-size: calc(16px + 1vw);
+  color: #030110;
+  font-weight: 900;
+}
+.header-info-desc1 {
+  font-size: calc(8px + 0.8vw);
+  color: #abbfda;
+}
+.header-info-desc2-left-title, .header-info-desc2-right-title  {
+  font-size: calc(8px + 1.3vw);
+  color: #FFFFFF;
+}
+.header-info-desc2-left-desc, .header-info-desc2-right-desc {
+  color: #abbfda;
+   font-size: calc(8px + 0.8vw);
+}
+
+.about-slogan-text {
+  color: #030110;
+  font-weight: 900;
+  font-size: calc(8px + 1.4vw);
+}
+.list li a {
+  color: #ffffff;
+  border: solid 1px #ffffff;
+  border-radius: 50%;
+  padding: 3px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.list li a:hover {
+  color: #4e93fa;
+}
+
+
+
+/*****************************************************/
+/*F&Q*/
+.F_Q-titles .section-title1 {
+  color: #1E1A33;
+}
+.F_Q-info-subtitle {
+  color: #4ea4fa;
+  font-size: calc(6px + 0.7vw);
+}
+.F_Q-questions-desc {
+  color: #363636;
+  font-size: calc(10px + 0.5vw);
+}
+.question-container {
+  border-bottom: 2px solid #c4c4c4;
+}
+.question {
+  color: #030110;
+  cursor: pointer;
+  font-size: calc(10px + 0.5vw);
+}
+.answer {
+  color: #585858;
+  font-size: calc(8px + 0.5vw);
+  transition: display 2s !important;
+}
+.question-icon {
+  transition: transform .5s;
+}
+.question-container.show .question {
+  color: #1e77cf;
+}
+.question-container.show .question-icon {
+  transform:rotate(90deg);
+}
+.question-container.show .answer {
+  display: block;
+}
+.question-container.hide .question {
+  color: #030110;
+}
+.question-container.hide .question-icon {
+  transform:rotate(0deg)
+}
+.question-container.hide .answer {
+  display: none;
+}
+/**********************************************************************************************************************/
+/*Media Queries*/
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width: 1200px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) {
+  .section-title1 {
+    text-align: center;
+  }
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) {
+  .header-info-title {
+    text-align: left !important;
+  }
+  .social-media .list li {
+    margin: 10px 0 !important;
+  }
+  .social-media img {
+    width: 20px;
+    height: 20px;
+  }
+  .uniqe-image {
+    top: 450px;
+    
+  }
+  .wave {
+    bottom: -25px;
+  }
+  
+}
+/*****************************************************************************************/

@@ -1,0 +1,115 @@
+.articles {
+    background-color: #ecf0f1;
+}
+
+.box-left {
+    border-radius: 25px 0 45px 45px;
+}
+
+.box-right {
+    border-radius: 0 25px 45px 45px;
+}
+
+.bg-events1,
+.bg-events2,
+.bg-events3,
+.bg-events20 {
+    position: relative;
+    background-size: cover;
+    background-position: center ;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bg-events1::after,
+.bg-events2::after,
+.bg-events3::after,
+.bg-events20::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.5) !important;
+    z-index: -1;
+}
+
+.bg-events20 {
+    background-image: url('../images/5.jpg');
+}
+
+.bg-events1{
+    background-image: url('../images/1.jpg');
+}
+.bg-events2{
+    background-image: url('../images/2.jpg');
+}
+.bg-events3{
+    background-image: url('../images/3.jpg');
+}
+
+
+.gallary {
+    background-image: url('../images/Artboard2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.customeTimes{
+    position: absolute;
+    top: -29px;
+    right: 7px;
+    background-color: rgba(20, 20, 20, 0.548) !important;
+    border-radius: 50%;
+    padding: 0px 5px !important;
+}
+
+.customeVideoWidth {
+    max-width: 680px !important;
+}
+
+
+.magazinDesign {
+    background-color: #0F0F0F;
+    background-image: url(../images/squares.png);
+    background-size: contain;
+    background-position-x: -48px;
+    background-position-y: 74px;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+}
+
+@media (max-width: 990px) {
+
+    .magazinDesign {
+        background-position-x: -89px;
+        background-position-y: 280px;
+    }
+    
+}
+
+.about .video-image i { 
+    background-color: #02457ab8 !important;
+    color: white;
+    bottom: 25px !important;
+    top: auto !important;
+    left: 25px !important;
+    transform: translate(0,0) !important;
+}
+
+.about .video-image {
+    border: solid 2.5px gray;
+    box-shadow: 0 7px 17px -5px black;
+}
+
+pre {
+    max-height: 300px;
+
+}
+
+.navbar {
+    backdrop-filter: blur(3px);
+    background-color: #21242d87;
+}

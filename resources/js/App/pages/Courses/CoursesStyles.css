@@ -1,0 +1,60 @@
+/* Header */
+.courses-header-container {
+  transform: translateY(30%);
+  -webkit-transform: translateY(30%);
+  -moz-transform: translateY(30%);
+  -ms-transform: translateY(30%);
+  -o-transform: translateY(30%);
+}
+.courses-header-title {
+  font-size: calc(10px + 2.5vw);
+  font-weight: 900;
+}
+
+.courses-header-link {
+  border: 3px solid #5299E1;
+  
+}
+.courses-header-link:hover {
+  background: #5299E1;
+  text-decoration: none;
+}
+.courses .nav-item .course-tab{
+  background-color: white;
+  color: #1E1A33;
+  border: 2px solid #707070;
+  width: 95px;
+  height: 95px;
+  padding-top: 35PX;
+  font-weight: 600;
+}
+.courses .nav-item .course-tab:hover {
+  background-color: #5299E1;
+  color: #fff;
+}
+.courses .nav-item .course-tab:hover {
+  background-color: #5299E1;
+  color: #fff;
+  text-decoration: none;
+  border-color: #fff;
+}
+.courses .nav-item .active {
+  background-color: #1E1A33;
+  color: #fff;
+  border-color: #fff;
+}
+.card-title, .courses-title, .instructors-title {
+  color: #1E1A33;
+  font-weight: 900;
+}
+.courses-title, .instructors-title {
+  font-size: calc(10px + 1.7vw);
+}
+.card-title {
+  font-size: calc(10px + 1.2vw);
+}
+
+.instructors {
+  background-color: #F5F7FB;
+}
+

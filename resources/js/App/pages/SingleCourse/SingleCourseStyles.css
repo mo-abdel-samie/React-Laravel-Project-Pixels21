@@ -1,0 +1,46 @@
+.course-header-desc {
+  font-size: calc(10px + 0.8vw);
+}
+.course .title {
+  color: #1E1A33;
+  font-size: calc(10px + 1.2vw);
+  font-weight: 600;
+}
+.course .text1 {
+  font-size: calc(10px + 0.4vw);
+}
+.course .text2 {
+  font-size: calc(10px + 0.7vw);
+}
+
+.tages-link {
+  background-color: #F5F7FB;
+  color: #3D4F7F;
+}
+.tages-link:hover {
+  text-decoration: none;
+  background-color: #e3e5e9;
+
+}
+
+.share-link.facebook {
+  background-color: #3B5998;
+}
+.share-link.linkedin {
+  background-color: #0E76A8 ;
+}
+.share-link.twitter {
+  background-color: #00ACEE;
+}
+.students-thoughts-rating {
+  border: solid 3px #130060;
+}
+
+.other-courses {
+  background-color: #f1efef;
+}
+
+.other-courses-title {
+  font-size: calc(10px + 1.5vw);
+  font-weight: 900 !important;
+}
