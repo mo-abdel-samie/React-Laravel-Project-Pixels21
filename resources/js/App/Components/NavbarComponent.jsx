@@ -32,12 +32,13 @@ function NavbarComponent() {
 
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
-                            <NavBarLink title="Home"     path="/home" />
+                            <NavBarLink title="Home"      path="/home" />
                             <NavBarLink title="About"     path="/about" />
-                            <NavBarLink title="Projects" path="/project-contest" />
-                            <NavBarLink title="Blogs"    path="/blogs" />
-                            <NavBarLink title="Events"   path="/pixels-events" />
-                            <NavBarLink title="Magazine" path="/magazine" />
+                            <NavBarLink title="Courses"   path="/courses/all" />
+                            <NavBarLink title="Projects"  path="/project-contest" />
+                            <NavBarLink title="Blogs"     path="/blogs" />
+                            <NavBarLink title="Events"    path="/pixels-events" />
+                            <NavBarLink title="Magazine"  path="/magazine" />
                         </ul>
                     </div>
                 </div>
