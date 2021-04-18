@@ -8,46 +8,46 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
   <>
-  <header style={{"backgroundImage": "url('/images/header/Courses.png')"}} className="page-header">
-    <div className="overlayer">
-      <div className="header-container d-flex mx-3 justify-content-between align-items-center">
-        <div className="courses-header-info text-light w-auto">
-          <h1 className="courses-header-title mb-4">Thousands of classes <br /> to <span className="text-color">explore</span> your <br /><span className="text-color">creativity</span> and <span className="text-color">grow</span><br /> your <span className="text-color">career</span></h1>
+  <header style={{"backgroundImage": "url('/images/header/Courses.png')"}} className="page-header d-flex">
+    <div className="container align-self-center ">
+
+      <div className="text-light">
+          <h1 className="courses-header-title mb-4">
+            Tens of classes to explore your creativity and grow your career
+          </h1>
           <Link to="/" className="courses-header-link p-2 text-light">get started for free</Link>
         </div>
-        
-        <div className="courses-social-media text-center mr-2">
-          <ul className="list">
-            <li className="my-4">
-            <a target="_blanck" className="my-4" href="https://www.facebook.com/PixelsEgyptOrg/">
-            <FaFacebookF size="1.5rem"/>
-            </a>
-            </li>
-            <li className="my-4">
-            <a target="_blanck" className="my-4" href="https://twitter.com/pixelsegypt?lang=en">
-            <FaTwitter size="1.5rem"/>
-            </a>
-            </li>
-            <li className="my-4">
-            <a target="_blanck" className="my-4" href="https://www.instagram.com/pixelsegypt/">
-            <AiFillInstagram size="1.5rem"/>
-            </a>
-            </li>
-            <li className="my-4">
-            <a target="_blanck" className="my-4" href="https://www.youtube.com/c/PixelsEgypt">
-            <FaYoutube size="1.5rem"/>
-            </a>
-            </li>
-            <li className="my-4">
-            <a target="_blanck" className="my-4" href="https://www.linkedin.com/company/pixels-hsb/">
-            <FaLinkedinIn size="1.5rem"/>
-            </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <img alt="wave" src={ waves } alt="Waves" className="wave position-absolute w-100"/>
+
+        <div className="col-12 d-flex justify-content-start justify-content-lg-center mt-4">
+                <span className="mx-3">
+                  <a target="_blanck" className="text-white" href="https://www.facebook.com/PixelsEgyptOrg/">
+                    <FaFacebookF size="1.5rem"/>
+                  </a>
+                </span>
+                <span className="mx-3">
+                  <a target="_blanck" className="text-white" href="https://twitter.com/pixelsegypt?lang=en">
+                    <FaTwitter size="1.5rem"/>
+                  </a>
+                </span>
+                <span className="mx-3">
+                  <a target="_blanck" className="text-white" href="https://www.instagram.com/pixelsegypt/">
+                    <AiFillInstagram size="1.5rem"/>
+                  </a>
+                </span>
+                <span className="mx-3">
+                  <a target="_blanck" className="text-white" href="https://www.youtube.com/c/PixelsEgypt">
+                    <FaYoutube size="1.5rem"/>
+                  </a>
+                </span>
+                <span className="mx-3">
+                  <a target="_blanck" className="text-white" href="https://www.linkedin.com/company/pixels-hsb/">
+                    <FaLinkedinIn size="1.5rem"/>
+                  </a>
+                </span>
+              </div>
+
     </div>
+
   </header>
   </>
   )

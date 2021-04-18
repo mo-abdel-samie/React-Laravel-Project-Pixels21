@@ -41,17 +41,17 @@ class App extends React.Component {
                 <Navbar />
                 <ToastContainer />
                 <Switch>
-                    <Route path="/home">            <HomePage />                </Route>
-                    <Route path="/about">           <AboutPage />               </Route>
-                    <Route path="/project-contest"> <ProjectsContst />          </Route>
-                    <Route path="/project/:id">     <Project />                 </Route>
-                    <Route path="/blogs">           <Blogs />                   </Route>
-                    <Route path="/blog/:id">        <Blog />                    </Route>
-                    <Route path="/courses/:category">         <CoursesPage />             </Route>
-                    <Route path="/course/:id">     <SingleCoursePage />        </Route>
-                    <Route path="/pixels-events">   <EventsPage />              </Route>
-                    <Route path="/magazine">        <Magazine />                </Route>
-                    <Redirect exact from="/" to="/home" />
+                    <Route path="/home">              <HomePage />                </Route>
+                    <Route path="/about">             <AboutPage />               </Route>
+                    <Route path="/project-contest">   <ProjectsContst />          </Route>
+                    <Route path="/project/:id">       <Project />                 </Route>
+                    <Route path="/blogs">             <Blogs />                   </Route>
+                    <Route path="/blog/:id">          <Blog />                    </Route>
+                    <Route path="/courses/:category"> <CoursesPage />             </Route>
+                    <Route path="/course/:id">        <SingleCoursePage />        </Route>
+                    <Route path="/pixels-events">     <EventsPage />              </Route>
+                    <Route path="/magazine">          <Magazine />                </Route>
+                    <Redirect exact from="/" to="/home" /> 
                     <Route >
                         <Error />
                     </Route>
