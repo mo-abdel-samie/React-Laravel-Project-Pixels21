@@ -50,7 +50,8 @@
                     <!-- your footer here -->
                 </div>
             </footer>
-            <!-- Footer Ended -->
+            <!-- Footer Ended last -->
+
 
         </main>
 
