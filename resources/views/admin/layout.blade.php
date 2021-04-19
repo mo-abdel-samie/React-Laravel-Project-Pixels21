@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <-- Footer Started -->
+            <!-- Footer Started -->
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -50,7 +50,7 @@
                     <!-- your footer here -->
                 </div>
             </footer>
-            <-- Footer Ended -->
+            <!-- Footer Ended -->
 
         </main>
 
