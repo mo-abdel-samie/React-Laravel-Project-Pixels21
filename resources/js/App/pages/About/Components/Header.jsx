@@ -14,7 +14,7 @@ const Header = () => {
             <Row>
               <div className="col-lg-4 header-info-titles text-lg-right">
                 <h1 className="font-weight-bold text-light">About Us</h1>
-                <h2 className="about-header-info-title">Our Story!</h2>
+                <h2 className="about-header-info-title">Our Story!</h2> 
               </div>
               <div className="col-lg-8">
                 <p className="header-info-desc1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.</p>
@@ -29,35 +29,6 @@ const Header = () => {
                   <p className="header-info-desc2-right-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
                 </div>
                 
-              </div>
-            </Row>
-            <Row>
-              <div className="col-12 d-flex justify-content-start justify-content-lg-center mt-4">
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.facebook.com/PixelsEgyptOrg/">
-                    <FaFacebookF size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://twitter.com/pixelsegypt?lang=en">
-                    <FaTwitter size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.instagram.com/pixelsegypt/">
-                    <AiFillInstagram size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.youtube.com/c/PixelsEgypt">
-                    <FaYoutube size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.linkedin.com/company/pixels-hsb/">
-                    <FaLinkedinIn size="1.5rem"/>
-                  </a>
-                </span>
               </div>
             </Row>
           </div>

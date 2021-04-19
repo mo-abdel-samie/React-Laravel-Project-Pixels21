@@ -18,34 +18,6 @@ const Header = () => {
           <Link to="/" className="courses-header-link p-2 text-light">get started for free</Link>
         </div>
 
-        <div className="col-12 d-flex justify-content-start justify-content-lg-center mt-4">
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.facebook.com/PixelsEgyptOrg/">
-                    <FaFacebookF size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://twitter.com/pixelsegypt?lang=en">
-                    <FaTwitter size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.instagram.com/pixelsegypt/">
-                    <AiFillInstagram size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.youtube.com/c/PixelsEgypt">
-                    <FaYoutube size="1.5rem"/>
-                  </a>
-                </span>
-                <span className="mx-3">
-                  <a target="_blanck" className="text-white" href="https://www.linkedin.com/company/pixels-hsb/">
-                    <FaLinkedinIn size="1.5rem"/>
-                  </a>
-                </span>
-              </div>
-
     </div>
 
   </header>
