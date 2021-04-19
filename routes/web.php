@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::group( ['prefix' => 'admin','namespace' => 'admin'] , function () {
+    Route::get('/dashboard','CMSController@index')->name('admin.dashboard');
+    Route::get('/home-page','CMSController@hompageHeader')->name('admin.home');
+});
+
+
+
+
+
 Route::get('/{mainPath?}', function () {
     return view('app');
 });
