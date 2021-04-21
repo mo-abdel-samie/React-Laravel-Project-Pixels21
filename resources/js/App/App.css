@@ -134,7 +134,7 @@ header::before {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(0deg, #00000094 42%, #ffffff00);
-  
+
 }
 
 header .pixels-logo {
@@ -518,7 +518,7 @@ header .pixels-logo {
 /* Start of Footer */
 footer {
   position: relative;
-  background-color: #333334;
+  background-color: #030110;
   color: white;
   padding-top: 60px;
 }
@@ -591,9 +591,9 @@ footer .go-top a {
   color: white;
 }
 
-.copy-rights {
-  background-color: #0f0f0f;
-}
+/*.copy-rights {*/
+/*  background-color: #3e60c7;*/
+/*}*/
 
 footer .form-custome {
   background-color: rgb(58, 77, 143);

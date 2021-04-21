@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 use App\Models\admin\Content;
 use Illuminate\Support\Facades\Storage;
-use function PHPUnit\Framework\isJson;
 
 class CMSController extends Controller
 {
@@ -22,54 +20,7 @@ class CMSController extends Controller
         return view('admin.cms.sections', ['sections'=>$sections]) ;
     }
 
-    public function showSectionForm ($id) {
-        $section = Content::find($id);
-//        dd($section->section_content);
-        $data = json_decode($section->section_content, true);
-//        dd(is_array($data));
-//        dd($data);
-        return view('admin.cms.form', ['section'=>$section, 'data'=>$data]);
-    }
-
     public $sections = [
-        'slogan'=>[
-            'text'=>[
-                'title1'=>'required',
-                'icon1'=>'required',
-                'title2'=>'required',
-                'icon2'=>'required',
-                'title3'=>'required',
-                'icon3'=>'required',
-            ],
-
-        ],
-        'about'=>[
-            'text'=>[
-                'title'=>'required',
-                'desc'=>'required',
-                'mission_title'=>'required',
-                'mission_desc'=>'required',
-                'vision_title'=>'required',
-                'vision_desc'=>'required',
-            ],
-            'url'=>[
-                'video'=>'required',
-            ],
-            'file'=>[
-                'image1'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-                'image2'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-                'image3'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-                'image4'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-            ],
-        ],
-        'about_slogan'=>[
-            'text'=>[
-                'title'=>'required',
-            ],
-            'file'=>[
-                'image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-            ],
-        ],
         'about_header'=>[
             'text'=>[
                 'info-title'=>'required',
@@ -91,7 +42,56 @@ class CMSController extends Controller
                 'linkedin-link'=>'required',
             ],
         ],
+        'about'=>[
+            'text'=>[
+                'title'=>'required',
+                'desc'=>'required',
+                'mission_title'=>'required',
+                'mission_desc'=>'required',
+                'vision_title'=>'required',
+                'vision_desc'=>'required',
+            ],
+            'url'=>[
+                'video'=>'required',
+            ],
+            'file'=>[
+                'image1'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+                'image2'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+                'image3'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+                'image4'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+            ],
+
+        ],
+        'about_slogan'=>[
+            'text'=>[
+                'title'=>'required',
+            ],
+            'file'=>[
+                'image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+            ],
+        ],
+        'slogan'=>[
+            'text'=>[
+                'title1'=>'required',
+                'icon1'=>'required',
+                'title2'=>'required',
+                'icon2'=>'required',
+                'title3'=>'required',
+                'icon3'=>'required',
+            ],
+
+        ],
     ];
+
+    public function showSectionForm ($id) {
+        $section = Content::find($id);
+//        dd($section->section_content);
+        $data = json_decode($section->section_content, true);
+//        dd(is_array($data));
+        return view('admin.cms.form', ['id'=>$section->id, 'section_name'=>$section->section_name, 'data'=>$data, 'sectionInputTypes'=>$this->sections[$section->section_name],]);
+    }
+
+
 
     public function updateSection (Request $request, $id) {
         $section = Content::find($id);
@@ -104,6 +104,7 @@ class CMSController extends Controller
             $data[]= $$inputType;
             $inputTypes[$inputType] = $$inputType;
         }
+
         $validated = [];
         if (count($data)>1) {
             for ($i=count($data)-1;$i>0;$i--) {
@@ -115,6 +116,7 @@ class CMSController extends Controller
         $validated = $request->validate($validated);
 //        dd($validated);
 //        dd(is_file($validated['image1']));
+
         if (array_key_exists('file', $sectionInputs)) {
             foreach ($validated as $key => $input) {
                 if(is_file($input)) {
