@@ -13,7 +13,7 @@ const Instructors = () => {
 
 
   return (
-      <section className="instructors py">
+      <section className="instructors py-120">
        <Container>
         <h2 className="instructors-title text-left">Our most popular<br /> instructors this <span className="text-color">month</span></h2>
 
@@ -21,7 +21,7 @@ const Instructors = () => {
           <Row className="justify-content-center align-items-start">
             {instructors.map((instructor,index)=> {
               return (
-                <Col key={instructor.id} lg={3} md={4} sm={12} className="mb-3">
+                <Col key={instructor.id} lg={3} md={4} sm={9} className="mb-3">
                   <img src={instructor.image} className={index%2!=0 ?"card-img-top pt-lg-5"  : "card-img-top"} alt="instructor" />
                   <div className= "card-body bg-light">
                     <h5 className="card-title">{instructor.name}</h5>

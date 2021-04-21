@@ -13,7 +13,7 @@ function Course() {
     <>
     <section className="course">
       <Container>
-        <Row className="justify-content-between w-100 align-items-start py">
+        <Row className="justify-content-between w-100 align-items-start py-120">
           <Col lg={8} sm={12}>
             <div className="mb-5 desc">
               <h3 className="title desc-title">Description</h3>
@@ -149,7 +149,7 @@ function Course() {
         </Row>
       </Container>
 
-      <div className="other-courses py">
+      <div className="other-courses py-120">
         <Container>
           <h2 className="mb-4 other-courses-title">Other Courses You May Like</h2>
           <CoursesItem allCourses={"all"}/>

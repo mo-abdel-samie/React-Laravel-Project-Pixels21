@@ -10,13 +10,13 @@ const Courses = () => {
   const coursesCategories = ['all', 'CS', 'Power', 'Mechanics'];
   const categoryHandler = (category) => {
     setCoursesCategory(category);
-  }  
+  }
 
   return (
-    <section className="courses py">
+    <section className="courses py-120">
       <Container>
         <h2 className="courses-title text-center">Unlimited access to more than 1600 courses</h2>
-        
+
         <ul className="nav my-4 justify-content-center">
           {coursesCategories.map((category, index)=> {
             return (
