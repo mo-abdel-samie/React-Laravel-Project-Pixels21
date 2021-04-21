@@ -62,7 +62,7 @@ ul {
   width: 270px;
   height: auto;
   border: 1px solid #010910;
-  filter: drop-shadow(4px 10px 12px black);
+  filter: drop-shadow(4px 2px 8px #4b4b4b);
   transition: all 0.6s ease-in-out;
 }
 
@@ -73,24 +73,24 @@ ul {
 
 .about-images  .imgBox:nth-child(1) img {
   top: 20px;
-  right: 43%;
+  right: 53%;
 }
 .about-images .imgBox:nth-child(2) img {
   top: -30px;
   right: 6%;
 }
 .about-images .imgBox:nth-child(3) img {
-  top: 190px;
-  right: 37%;
+  top: 220px;
+  right: 45%;
 }
 .about-images .imgBox:nth-child(4) img {
-  top: 140px;
+  top: 170px;
   right: 0;
 }
 
 .about-video {
   height: 600px;
-  filter: drop-shadow(2px 4px 6px black);
+  filter: drop-shadow(2px 2px 10px #4b4b4b);
 }
 
 .v-m-section {
@@ -181,7 +181,7 @@ ul {
     width: 25px;
     height: 25px;
   }
-  
+
   .feature-img {
     width: 20px;
     height: 20px;
@@ -190,7 +190,7 @@ ul {
   .about-video {
     height: 400px;
   }
-  
+
 }
 
 /* Small devices (landscape phones, 576px and up) */

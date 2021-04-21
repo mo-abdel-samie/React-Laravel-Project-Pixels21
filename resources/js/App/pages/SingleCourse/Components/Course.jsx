@@ -47,7 +47,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -57,7 +57,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -67,7 +67,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -79,7 +79,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -89,7 +89,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -99,7 +99,7 @@ function Course() {
                     <div className="rate">
                       <p className="my-auto">
                         <span className="text-color"><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /><FaStar className="d-inline-block rate-icon" /></span>
-                        <span className="float-right mt-1 text1">79%</span>  
+                        <span className="float-right mt-1 text1">79%</span>
                       </p>
                       <div className="progress">
                         <div className="progress-bar w-75" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -108,7 +108,7 @@ function Course() {
                   </Col>
                 </Row>
               </div>
-              
+
               {/* <div className="student-reviews">
                 <h3 className="title reviews-title"></h3>
 
@@ -116,7 +116,7 @@ function Course() {
             </div>
 
           </Col>
-          
+
           <Col lg={4} sm={12}>
             <div className="mb-5 inclides">
               <h3 className="title inclides-title">This course includes</h3>
@@ -126,16 +126,16 @@ function Course() {
 
             <div className="mb-5 tags">
               <h3 className="title tags-title">Tags</h3>
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link>
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link>
               <Link to="/" className="tages-link d-inline-block m-1 px-5 py-2 ">Ux</Link>
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link><br />
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link><br />
 
               <Link to="/" className="tages-link d-inline-block m-1 px-5 py-2 ">Ux</Link>
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link>
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link><br />
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link>
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link><br />
 
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link>
-              <Link to="/" className="tages-link d-inline-block m-1 px-4 py-2 ">Ux</Link>
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link>
+              <Link to="/" className="tages-link d-inline-block m-1 px-3 py-2 ">Ux</Link>
               <Link to="/" className="tages-link d-inline-block m-1 px-5 py-2 ">Ux</Link><br />
             </div>
 

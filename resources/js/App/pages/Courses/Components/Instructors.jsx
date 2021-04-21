@@ -6,7 +6,7 @@ const Instructors = () => {
   const path = '/images/courses-page/';
   const instructors = [
     {id:1, name:"web", commite:'CS', image: path+'web.png', students:5, courses: 4},
-    {id:2, name:"web", commite:'CS', image: path+'web.png', students:5, courses: 4},    
+    {id:2, name:"web", commite:'CS', image: path+'web.png', students:5, courses: 4},
     {id:3, name:"web", commite:'CS', image: path+'web.png', students:5, courses: 4},
     {id:4, name:"web", commite:'CS', image: path+'web.png', students:5, courses: 4},
   ];
