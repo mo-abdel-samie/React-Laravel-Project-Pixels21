@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {Container} from "react-bootstrap";
 
 
 class Footer extends Component {
@@ -28,7 +29,7 @@ class Footer extends Component {
                 <div className ="row">
                     <div className ="col-lg-7 pl-lg-5 p-3">
                         <img  src="/images/MagazineImg/logo.png" width="100px" alt="Pixels" />
-                        <p className ="my-3 text-muted text-justify">
+                        <p className ="my-3 text-color2 text-justify">
                         Pixels is a student activity at faculty of engineering Helwan University, aims to spread the engineering science, to create a productive community through many tracks such as academic track, competitions track, camps track, Juniors track and Projects track.                        </p>
                         <div className =" mt-4 justify-content-around d-flex">
 
@@ -72,18 +73,12 @@ class Footer extends Component {
                 </div>
             </div>
 
-            <div className ="copy-rights  mt-5">
-                <div className ="container font-weight-bold">
-                    <div className ="row d-flex justify-content-between  ">
-                        <div className ="col-10 py-2">
-                            <p className="text-center m-0"><span className =" text-main">Pixels</span>©All Rightreseved-2020</p>
-                        </div>
-                        {/* <div  className = "btn-up go-top" >
-                            <i className ="fa fa-arrow-up fa-2x"></i>
-                        </div> */}
-                    </div>
-                </div>
-            </div>
+            <Container className ="copy-rights  mt-5 pb-2">
+                <p className="font-weight-bold text-center text-color"><span className =" text-main">Pixels</span>©All Rightreseved-2020</p>
+                    {/* <div  className = "btn-up go-top" >
+                        <i className ="fa fa-arrow-up fa-2x"></i>
+                    </div> */}
+            </Container>
 
         </footer>
         );

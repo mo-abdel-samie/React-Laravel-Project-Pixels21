@@ -16,10 +16,10 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item @if(Route::is('admin.home')) active @endif  ">
-                <a class="nav-link" href="{{ route('admin.home') }}">
+            <li class="nav-item @if(Route::is('admin.sections')) active @endif  ">
+                <a class="nav-link" href="{{ route('admin.sections') }}">
                     <i class="material-icons">home</i>
-                    <p>Home Page</p>
+                    <p>Sections</p>
                 </a>
             </li>
 

@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group( ['prefix' => 'admin','namespace' => 'admin'] , function () {
     Route::get('/dashboard','CMSController@index')->name('admin.dashboard');
-    Route::get('/home-page','CMSController@hompageHeader')->name('admin.home');
+    Route::get('/sections','CMSController@showSections')->name('admin.sections');
+    Route::get('/sections/section/{id}','CMSController@showSectionForm')->name('admin.sections.sectionForm');
+    Route::post('/sections/section/update/{id}','CMSController@updateSection')->name('admin.slogan.update');
 });
 
 

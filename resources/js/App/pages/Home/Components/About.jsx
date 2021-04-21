@@ -2,8 +2,6 @@ import React from 'react';
 import  Aos  from 'aos';
 
 
-
-
 export default function About() {
 
     return (
@@ -11,16 +9,16 @@ export default function About() {
         <section id="about" className="about container py-5 mb-5" >
 
             <div className="row">
-                
+
                 <div className="about-info col-lg-6 col-12" data-aos="fade-right">
                     <h3 className="section-title1">About US</h3>
                     <span className="line mx-md-auto d-inline-block"></span>
-                    <p> 
+                    <p>
                         Pixels is a student activity established 6 years ago in helwan University; a non-profit organization, We are a community of makers and ambitious talented engineers, aiming to build a community that believes in science and building instead of consuming, because only by the aid of science and knowledge we can achieve our vision, which is to spread the engineering science, to create a productive community.
                     </p>
                 </div>
 
-                <div className="about-images text-center col-lg-6 col-12"> 
+                <div className="about-images text-center col-lg-6 col-12">
                     <div className="imgBox" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="50">
                         <img alt="about" src="/images/home-page/about/about2.jpg" />
                     </div>
