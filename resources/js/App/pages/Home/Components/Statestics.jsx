@@ -2,9 +2,8 @@ import React from 'react'
 
 export default function Statestics() {
     return (
-        <section className="statestics " style={{backgroundImage:"url(/images/Mini-Event.JPG)",color:"#e3dce8"}}>
-
-            <div className="container">
+        <section className="statestics" style={{backgroundImage:"url(/images/Mini-Event.JPG)",color:"#e3dce8", backgroundAttachment:"fixed",}}>
+            <div className="container py-5">
 
             <div className="row">
                 <div className="col-lg-3 text-center" data-aos="fade-up"  data-aos-delay="50">
@@ -18,14 +17,14 @@ export default function Statestics() {
                     <br/>
                     <h3>4000</h3>
                     <p>Sessions</p>
-                    
+
                 </div>
                 <div className="col-lg-3 text-center" data-aos="fade-up"  data-aos-delay="450">
                     <i className="fa fa-users fa-3x mb-3"></i>
                     <br/>
                     <h3>6000</h3>
                     <p>Students</p>
-                    
+
                 </div>
                 <div className="col-lg-3 text-center" data-aos="fade-up"  data-aos-delay="650">
                     <i className="fa fa-video fa-3x mb-3"></i>
