@@ -1,5 +1,11 @@
 /**********************************************************************************************************************/
 /*Common Styles*/
+.text-color {
+    color: #5299E1;
+}
+.text-color2 {
+    color: #d3daeb;
+}
 .section-title1 {
     font-size: calc(8px + 2.2vw);
 }
@@ -50,23 +56,27 @@
 .list li a {
     color: #ffffff;
     border: solid 1px #ffffff;
-    padding: 10px 3px;
-    border-radius:30%;
-    -webkit-border-radius:30%;
-    -moz-border-radius:30%;
-    -ms-border-radius:30%;
-    -o-border-radius:30%;
+    border-radius: 50%;
+    padding: 3px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
-/* .list li a:hover {
-  color: #4e93fa;
-  border: none;
-} */
-
-.text-color {
-    color: #5299E1;
+.list li:nth-child(1) a:hover {
+    color: var(--facebookColor);
 }
-.text-color2 {
-    color: #d3daeb;
+.list li:nth-child(2) a:hover {
+    color: var(--twitterColor);
+}
+.list li:nth-child(3) a:hover {
+    color: var(--instaColor);
+}
+.list li:nth-child(4) a:hover {
+    color: var(--youtubeColor);
+}
+.list li:nth-child(5) a:hover {
+    color: var(--linkedinColor);
 }
 .other-courses .card-body, .courses .card-body, .instructors .card-body {
     border: solid 5px #1E1A33;
