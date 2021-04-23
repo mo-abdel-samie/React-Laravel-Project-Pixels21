@@ -126,7 +126,7 @@ class CMSController extends Controller
                 'image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
             ],
         ],
-        'F-A-Q'=> [
+        'about_FAQ'=> [
             'text'=>[
                 'section_title'=>'required|string',
                 'section_subtitle'=>'required|string',

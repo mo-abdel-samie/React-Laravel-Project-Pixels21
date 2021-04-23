@@ -8,10 +8,13 @@
             @foreach($sectionInputTypes as $type => $inputs)
 {{--                {{dd($inputs)}}--}}
                 <div class="type mb-5">
-                    <label class="text-light font-weight-bolder text-capitalize">{{$type}} :</label>
+                    <label class="text-light font-weight-bolder text-capitalize">{{$type}} :</label><br>
                     @foreach($inputs as $input => $value)
 {{--                        {{dd($input)}}--}}
-                            <input type="{{$type}}" name="{{$input}}" value="{{$data[$input]}}" placeholder="{{$input}}" class="form-control"/>
+                        @if($type === 'file')
+                            <label class="font-weight-bolder text-capitalize">{{$input}} :</label>
+                        @endif
+                        <input type="{{$type}}" name="{{$input}}" value="{{$data[$input]}}" placeholder="{{$input}}" class="form-control"/>
                     @endforeach
                 </div>
             @endforeach
