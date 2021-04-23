@@ -88,21 +88,6 @@ ul {
   font-weight: 900;
   font-size: calc(8px + 1.4vw);
 }
-.list li a {
-  color: #ffffff;
-  border: solid 1px #ffffff;
-  border-radius: 50%;
-  padding: 3px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.list li a:hover {
-  color: #4e93fa;
-}
-
-
 /*==========================================================
 -------------------{ Start Team slider }-------------------
 ==========================================================*/
@@ -230,7 +215,7 @@ ul {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (max-width: 1200px) {
-  
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -238,7 +223,7 @@ ul {
   .section-title1 {
     text-align: center;
   }
-  
+
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -260,11 +245,11 @@ ul {
   }
   .uniqe-image {
     top: 450px;
-    
+
   }
   .wave {
     bottom: -25px;
   }
-  
+
 }
 /*****************************************************************************************/

@@ -12,12 +12,16 @@
 }
 
 .courses-header-link {
+<<<<<<< HEAD
+    border: 3px solid #5299E1;
+=======
   border: 3px solid #5299E1;
 
+>>>>>>> main
 }
 .courses-header-link:hover {
   background: #5299E1;
-  text-decoration: none;
+ text-decoration: none;
 }
 .courses .nav-item .course-tab{
   background-color: white;
@@ -27,6 +31,7 @@
   height: 95px;
   padding-top: 35PX;
   font-weight: 600;
+  transition: background-color 0.3s;
 }
 .courses .nav-item .course-tab:hover {
   background-color: #5299E1;
