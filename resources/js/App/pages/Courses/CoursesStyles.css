@@ -12,7 +12,12 @@
 }
 
 .courses-header-link {
+<<<<<<< HEAD
     border: 3px solid #5299E1;
+=======
+  border: 3px solid #5299E1;
+
+>>>>>>> main
 }
 .courses-header-link:hover {
   background: #5299E1;

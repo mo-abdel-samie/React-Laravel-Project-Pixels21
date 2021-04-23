@@ -8,6 +8,7 @@
             @foreach($sectionInputTypes as $type => $inputs)
 {{--                {{dd($inputs)}}--}}
                 <div class="type mb-5">
+<<<<<<< HEAD
                     <label class="text-light font-weight-bolder text-capitalize">{{$type}} :</label><br>
                     @foreach($inputs as $input => $value)
 {{--                        {{dd($input)}}--}}
@@ -15,6 +16,12 @@
                             <label class="font-weight-bolder text-capitalize">{{$input}} :</label>
                         @endif
                         <input type="{{$type}}" name="{{$input}}" value="{{$data[$input]}}" placeholder="{{$input}}" class="form-control"/>
+=======
+                    <label class="text-light font-weight-bolder text-capitalize">{{$type}} :</label>
+                    @foreach($inputs as $input => $value)
+{{--                        {{dd($input)}}--}}
+                            <input type="{{$type}}" name="{{$input}}" value="{{$data[$input]}}" placeholder="{{$input}}" class="form-control"/>
+>>>>>>> main
                     @endforeach
                 </div>
             @endforeach
