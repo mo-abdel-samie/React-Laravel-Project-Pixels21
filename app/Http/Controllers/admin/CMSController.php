@@ -15,6 +15,12 @@ class CMSController extends Controller
 
         return view('admin/index') ;
     }
+    
+    
+    
+    
+    
+    
     public function showSections () {
         $sections = Content::all();
 //        dd($sections);
