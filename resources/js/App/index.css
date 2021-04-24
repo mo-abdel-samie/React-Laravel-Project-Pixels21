@@ -1,14 +1,11 @@
 /**********************************************************************************************************************/
 /*Common Styles*/
-<<<<<<< HEAD
 .text-color {
     color: #5299E1;
 }
 .text-color2 {
     color: #d3daeb;
 }
-=======
->>>>>>> main
 .section-title1 {
     font-size: calc(8px + 2.2vw);
 }
@@ -59,7 +56,6 @@
 .list li a {
     color: #ffffff;
     border: solid 1px #ffffff;
-<<<<<<< HEAD
     border-radius: 50%;
     padding: 3px;
     -webkit-border-radius: 50%;
@@ -109,53 +105,6 @@
 /**********************************************************************************************************************/
 /*Media Queries*/
 
-=======
-    padding: 10px 3px;
-    border-radius:30%;
-    -webkit-border-radius:30%;
-    -moz-border-radius:30%;
-    -ms-border-radius:30%;
-    -o-border-radius:30%;
-}
-/* .list li a:hover {
-  color: #4e93fa;
-  border: none;
-} */
-
-.text-color {
-    color: #5299E1;
-}
-.text-color2 {
-    color: #d3daeb;
-}
-.other-courses .card-body, .courses .card-body, .instructors .card-body {
-    border: solid 5px #1E1A33;
-    border-top: none;
-}
-.other-courses .card-img, .courses .card-img {
-    overflow: hidden;
-}
-.other-courses .card-img img , .courses .card-img img {
-    transition: transform 0.5s;
-    -webkit-transition: transform 0.5s;
-    -moz-transition: transform 0.5s;
-    -ms-transition: transform 0.5s;
-    -o-transition: transform 0.5s;
-}
-.other-courses .card-img:hover img , .courses .card-img:hover img {
-    transform: scale(1.3);
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    -o-transform: scale(1.3);
-}
-.rate-icon {
-    color: #5299E1;
-}
-/**********************************************************************************************************************/
-/*Media Queries*/
-
->>>>>>> main
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width: 992px) {
