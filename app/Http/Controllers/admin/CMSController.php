@@ -18,6 +18,7 @@ class CMSController extends Controller
 //        dd($sections);
         return view('admin.cms.sections', ['sections'=>$sections]) ;
     }
+
     // array contains inputs of every section with input types
     public $sections = [
         'home_header'=> [
@@ -34,8 +35,8 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'background-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'slogan-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'slogan-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'home_slogan'=>[
@@ -61,10 +62,10 @@ class CMSController extends Controller
                 'video'=>'required|url',
             ],
             'file'=>[
-                'image1'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image2'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image3'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image4'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image1'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image2'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image3'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image4'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'home_statistics'=>[
@@ -86,8 +87,8 @@ class CMSController extends Controller
                 'video-icon'=>'required|string',
             ],
             'file'=>[
-                'image1'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image2'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image1'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image2'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'about_header'=>[
@@ -110,7 +111,7 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'background-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'about_slogan'=>[
@@ -118,7 +119,7 @@ class CMSController extends Controller
                 'title'=>'required|string',
             ],
             'file'=>[
-                'image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+                'image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'about_FAQ'=> [
@@ -135,11 +136,11 @@ class CMSController extends Controller
             ],
             'file'=>[
                 'projects-video'=>'mimetypes:video/avi,video/mp4,video/webm,video/mpeg,video/quicktime',
-                'background-image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
-                'slogan-image'=>'required|file|image|mimes:jpg,jpeg,png|max:5000',
+                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'slogan-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
-        'courses'=>[
+        'courses_page'=>[
             'text'=>[
                 'courses-title'=>'required|string',
                 'instructors-title'=>'required|string',
@@ -169,37 +170,39 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'logo-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'logo-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
     ];
+
     public function showSectionForm ($id) {
         $section = Content::find($id);
 //        dd($section->section_content);
+
         // convert data into associative array
         $data = json_decode($section->section_content, true);
 //        dd(is_array($data));
+
         // return section data and section of same name in sections array
         return view('admin.cms.form', ['id'=>$section->id, 'section_name'=>$section->section_name, 'data'=>$data, 'sectionInputTypes'=>$this->sections[$section->section_name],]);
     }
     public function updateSection (Request $request, $id) {
         $section = Content::find($id);
         $sectionInputs = $this->sections[$section->section_name];
-//        $inputTypes=[];
         foreach ($sectionInputs as $type=>$inputs) {
             $inputType = $type;
             $$inputType = $inputs;
-            // get array contains array of inputs of each section type
+
+            // get array contains arrays of inputs of each section type
             $data[]= $$inputType;
-//            $inputTypes[$inputType] += $$inputType;
         }
         $validated = [];
-        if (count($data)>1) {
+        if (count($data)>1) { // There's multiple input types in section
             for ($i=count($data)-1;$i>0;$i--) {
                 // Merge the data inputs in one array
                 $validated += array_merge($data[$i],$data[$i-1]);
             }
-        } else {
+        } else { // There's one inputs type in section
             $validated = $data[0];
         }
         $validated = $request->validate($validated);
@@ -207,29 +210,29 @@ class CMSController extends Controller
 //        dd(is_file($validated['image1']));
         if (array_key_exists('file', $sectionInputs)) {
             foreach ($validated as $key => $input) {
-                if(is_file($input)) {
-                    $fileNameWithExt = $input->getClientOriginalName();
-                    // Delete old file
-                    $exists = Storage::disk('local')->exists('public/images/cms/'.$fileNameWithExt);
-                    if ($exists) {
-                        Storage::delete('public/images/cms/'.$fileNameWithExt);
+                if($input!=null) {
+                    if(is_file($input)) {
+                        $fileNameWithExt = $input->getClientOriginalName();
+                        // Delete old file
+                        $exists = Storage::disk('local')->exists('public/images/cms/'.$fileNameWithExt);
+                        if ($exists) {
+                            Storage::delete('public/images/cms/'.$fileNameWithExt);
+                        }
+                        // Upload new file
+                        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                        $extension = $input->getClientOriginalExtension();
+                        $fileNameToStore = $fileName.'.'.$extension;
+                        $path = $input->storeAs('public/images/cms', $fileNameToStore);
+                        $validated[$key] = $path;
                     }
-                    // Upload new file
-                    $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                    $extension = $input->getClientOriginalExtension();
-                    $fileNameToStore = $fileName.'.'.$extension;
-                    $path = $input->storeAs('public/images/cms/', $fileNameToStore);
-                    $validated[$key] = $path;
                 }
 //                dd($input);
             }
 //            dd($validated);
         }
+
         Content::where('id',$id)->update(['section_content'=>$validated]);
+
         return redirect()->route('admin.sections');
     }
 }
-
-
-
-

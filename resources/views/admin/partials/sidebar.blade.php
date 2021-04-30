@@ -22,6 +22,41 @@
                     <p>Sections</p>
                 </a>
             </li>
+            <li class="nav-item @if(Route::is('blogs.index')) active @endif  ">
+                <a class="nav-link dropdown-toggle" href="{{ route('blogs.index') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">home</i>
+                    <p class="d-inline-block">Blogs</p>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('blogs.index') }}">Show Articles</a>
+                    <a class="dropdown-item" href="{{ route('blogs.create') }}">Create Article</a>
+                </div>
+            </li>
+
+            <li class="nav-item @if(Route::is('courses.index')) active @endif  ">
+                <a class="nav-link dropdown-toggle" href="{{ route('courses.index') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">home</i>
+                    <p class="d-inline-block">Courses</p>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('courses.index') }}">Show Courses</a>
+                    <a class="dropdown-item" href="{{ route('courses.create') }}">Create Course</a>
+                </div>
+            </li>
+
+            <li class="nav-item @if(Route::is('projects.index')) active @endif  ">
+                <a class="nav-link dropdown-toggle" href="{{ route('projects.index') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">home</i>
+                    <p class="d-inline-block">Projects</p>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('projects.index') }}">Show Projects</a>
+                    <a class="dropdown-item" href="{{ route('projects.create') }}">Create Project</a>
+                </div>
+            </li>
 
             <!-- your sidebar here -->
         </ul>
