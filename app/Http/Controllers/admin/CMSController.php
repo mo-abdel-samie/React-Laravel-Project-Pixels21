@@ -35,8 +35,8 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'slogan-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'background-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'slogan-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'home_slogan'=>[
@@ -62,10 +62,10 @@ class CMSController extends Controller
                 'video'=>'required|url',
             ],
             'file'=>[
-                'image1'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image2'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image3'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image4'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image1'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image2'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image3'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image4'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'home_statistics'=>[
@@ -87,8 +87,8 @@ class CMSController extends Controller
                 'video-icon'=>'required|string',
             ],
             'file'=>[
-                'image1'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'image2'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image1'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'image2'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'about_header'=>[
@@ -111,7 +111,7 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'background-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'about_slogan'=>[
@@ -135,9 +135,9 @@ class CMSController extends Controller
                 'section-title'=>'required|string',
             ],
             'file'=>[
-                'projects-video'=>'mimetypes:video/avi,video/mp4,video/webm,video/mpeg,video/quicktime',
-                'background-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-                'slogan-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'projects-video'=>'required|mimetypes:video/avi,video/mp4,video/webm,video/mpeg,video/quicktime',
+                'background-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'slogan-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
         'courses_page'=>[
@@ -170,18 +170,16 @@ class CMSController extends Controller
                 'linkedin-link'=>'required|url',
             ],
             'file'=>[
-                'logo-image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'logo-image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ],
         ],
     ];
 
     public function showSectionForm ($id) {
         $section = Content::find($id);
-//        dd($section->section_content);
 
         // convert data into associative array
         $data = json_decode($section->section_content, true);
-//        dd(is_array($data));
 
         // return section data and section of same name in sections array
         return view('admin.cms.form', ['id'=>$section->id, 'section_name'=>$section->section_name, 'data'=>$data, 'sectionInputTypes'=>$this->sections[$section->section_name],]);
@@ -206,8 +204,6 @@ class CMSController extends Controller
             $validated = $data[0];
         }
         $validated = $request->validate($validated);
-//        dd($validated);
-//        dd(is_file($validated['image1']));
         if (array_key_exists('file', $sectionInputs)) {
             foreach ($validated as $key => $input) {
                 if($input!=null) {
