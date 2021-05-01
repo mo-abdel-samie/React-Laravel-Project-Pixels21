@@ -98,7 +98,7 @@
                         ],
                         "collapsed"=> false ,
                     ],
-                    "Create Project" =>[
+                    "Create Project" => [
                         "icon" => "dashboard",
                         "href" => "projects.create",
                         "routes" => [
