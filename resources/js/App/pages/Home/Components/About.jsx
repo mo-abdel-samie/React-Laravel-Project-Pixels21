@@ -5,8 +5,8 @@ import  Aos  from 'aos';
 export default function About() {
 
     return (
-        <>
-        <section id="about" className="about container py-5 mb-5" >
+        <section className="py-5" style={{ 'backgroundImage':'url(images/bglight.png)' }}>
+        <div id="about" className="about container "  >
 
             <div className="row">
 
@@ -65,8 +65,8 @@ export default function About() {
 
             </div>
 
-        </section>
+        </div>
 
-        </>
+        </section>
     )
 }

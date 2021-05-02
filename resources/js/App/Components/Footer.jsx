@@ -44,10 +44,13 @@ class Footer extends Component {
                     <div className ="col-lg-5 pl-lg-5 p-3 quick-link">
                         <h5>Quick Link</h5>
                         <ul>
-                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/"> Home     </Link> </li>
-                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/"> Blogs    </Link> </li>
-                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/"> Events   </Link> </li>
-                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/"> Magazine </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/home"> Home     </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/about"> Aboute     </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/courses"> Courses     </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/project-contest"> Projects     </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/blogs"> Blogs    </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/pixels-events"> Events   </Link> </li>
+                            <li> <i className ="fas fa-angle-right"></i><Link className = "text-white" to="/magazine"> Magazine </Link> </li>
                         </ul>
                     </div>
 
@@ -73,11 +76,8 @@ class Footer extends Component {
                 </div>
             </div>
 
-            <Container className ="copy-rights  mt-5 pb-2">
-                <p className="font-weight-bold text-center text-color"><span className =" text-main">Pixels</span>©All Rightreseved-2020</p>
-                    {/* <div  className = "btn-up go-top" >
-                        <i className ="fa fa-arrow-up fa-2x"></i>
-                    </div> */}
+            <Container className ="  mt-5 pb-2">
+                <p className=" text-center text-color"><span className="font-weight-bold">Pixels</span>©All Rightreseved-2021</p>
             </Container>
 
         </footer>

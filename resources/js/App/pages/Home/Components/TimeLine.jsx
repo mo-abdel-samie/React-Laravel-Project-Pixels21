@@ -76,7 +76,7 @@ export default function TimeLine() {
 
 
     return (
-        <section className="timeline overflow-hidden">
+        <section className="timeline overflow-hidden" style={{ backgroundImage: 'url(images/bglight.png)' }}>
                 <div className="container">
                     <h2>Pixels Events</h2>
 

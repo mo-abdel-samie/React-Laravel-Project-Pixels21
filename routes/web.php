@@ -19,6 +19,22 @@ Route::group( ['prefix' => 'admin','namespace' => 'admin'] , function () {
     Route::get('/sections','CMSController@showSections')->name('admin.sections');
     Route::get('/sections/section/{id}','CMSController@showSectionForm')->name('admin.sections.sectionForm');
     Route::post('/sections/section/update/{id}','CMSController@updateSection')->name('admin.slogan.update');
+
+    // CMS
+    Route::group(['prefix'=>'/sections'], function (){
+        Route::get('/','CMSController@showSections')->name('admin.sections');
+        Route::get('/section/{id}','CMSController@showSectionForm')->name('admin.sections.sectionForm');
+        Route::post('/section/update/{id}','CMSController@updateSection')->name('admin.slogan.update');
+    });
+
+    Route::get('/projects/ckeditor/upload-image', 'ProjectsController@uploadImage')->name('editorImageUpload');
+    
+    // Restful Controllers
+    Route::resources([
+        'blogs' => 'BlogsController',
+        'courses' => 'CoursesController',
+        'projects' => 'ProjectsController',
+    ]);
 });
 
 
