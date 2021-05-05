@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsPagesTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateProjectsPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects_pages', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->longText('content');
-            $table->foreignId('project_id')->constrained('projects')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->string('email');
+            $table->string('password');
+            $table->string('name');
+            $table->string('committee');
+            $table->string('job_desc');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateProjectsPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_pages');
+        Schema::dropIfExists('admins');
     }
 }
