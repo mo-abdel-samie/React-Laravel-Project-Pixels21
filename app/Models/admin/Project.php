@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
     protected $fillable = ['title', 'subtitle', 'image'];
 
-    public function projectsPage() {
+    public function projectPage() {
         return $this->hasOne(ProjectsPage::class);
     }
 }

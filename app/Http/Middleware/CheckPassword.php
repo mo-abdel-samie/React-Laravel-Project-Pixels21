@@ -16,7 +16,7 @@ class CheckPassword
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->api_password != env("JWT_SECRET")) {
+        if ($request->api_password != '5WhSLrdFrutylUlDWhd43YGDiyg34pys4RGMId2rVOiAxyoeiVhoTCu8dOmVJc5K') {
             return response()->json(['message'=>'Unauthenticated.']);
         }
 

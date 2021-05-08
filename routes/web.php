@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\CMSController;
+use App\Http\Controllers\admin\ProjectsController;
+use App\Http\Controllers\admin\BlogsController;
+use App\Http\Controllers\admin\CoursesController;
 use Illuminate\Support\Facades\Route;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,23 +18,24 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group( ['prefix' => 'admin','namespace' => 'admin'] , function () {
-    Route::get('/dashboard','CMSController@index')->name('admin.dashboard');
+    Route::get('/dashboard',[CMSController::class, 'index'])->name('admin.dashboard');
 
     // CMS
     Route::group(['prefix'=>'/sections'], function (){
-        Route::get('/','CMSController@showSections')->name('admin.sections');
-        Route::get('/section/{id}','CMSController@showSectionForm')->name('admin.sections.sectionForm');
-        Route::post('/section/update/{id}','CMSController@updateSection')->name('admin.slogan.update');
+        Route::get('/',[CMSController::class,'showSections'])->name('admin.sections');
+        Route::get('/section/{id}',[CMSController::class,'showSectionForm'])->name('admin.sections.sectionForm');
+        Route::post('/section/update/{id}',[CMSController::class,'updateSection'])->name('admin.slogan.update');
     });
 
-    Route::get('/projects/ckeditor/upload-image', 'ProjectsController@uploadImage')->name('editorImageUpload');
-    // Restful Controllers
-    Route::resources([
-        'blogs' => 'BlogsController',
-        'courses' => 'CoursesController',
-        'projects' => 'ProjectsController',
-    ]);
+    Route::get('/projects/ckeditor/upload-image', [ProjectsController::class,'uploadImage'])->name('editorImageUpload');
 });
+
+// Restful Controllers
+Route::resources([
+    'blogs' => BlogsController::class,
+    'courses' => CoursesController::class,
+    'projects' => ProjectsController::class,
+]);
 
 
 
