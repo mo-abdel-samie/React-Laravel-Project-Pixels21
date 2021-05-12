@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+:root {
+    --mainColor :#0f0f0f;
+    --secColor :#333334;
+}
+
+.magazin {
+    background-color: var(--mainColor);
+    color: white;
+    font-family: 'Acme', sans-serif;
+}
+
+.magazin p {
+    font-size: 21px;
+    letter-spacing: 0.5px;
+}
+
+/*------------------------------------------------------
+    1. Header Section
+------------------------------------------------------*/
+.magazin-header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+}
+
+.magazin-header h2 {
+    letter-spacing: 9px;
+    font-size: 55px;
+    font-weight: 900 !important;
+    color: #d41141 !important;
+    margin-top: 8px;
+}
+
+/*------------------------------------------------------
+    2. What is Volix Section
+------------------------------------------------------*/
+.magazin .what-is h2{
+    position: relative;
+    margin-bottom: 40px;
+    font-size: 45px;
+    letter-spacing: 1px;
+}
+
+.magazin .what-is h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50% , 0);
+    width: 3em;
+    height: 3px;
+    background-color: #fbb81d;
+}
+
+
+
+
+/*------------------------------------------------------
+    3. Content Section
+------------------------------------------------------*/
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  
+  .news-card {
+    border: 0px solid aqua;
+    margin: 0.5rem;
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  
+  @media (min-width: 900px) {
+  
+  .news-card {
+      height: 20rem
+  }
+    }
+  
+  .news-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
+        z-index: 0;
+      }
+  
+  .news-card__card-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+  /*     background: rgba(255,0,0,.5); */
+    }
+  
+  .news-card__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 3s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      z-index: -1;
+    }
+  
+  .news-card__text-wrapper {
+      position: absolute;
+      width: 100%;  
+      bottom: 0rem;
+      padding: 1rem;
+      color: white;
+  /*     background-color: rgba(0, 0, 0, 0.4); */
+      transition: background-color 1.5s ease;
+    }
+  
+  .news-card__title {
+      transition: color 1s ease;
+      margin-bottom: .5rem;
+    }
+  
+  .news-card__post-date {
+      font-size: .7rem;
+      margin-bottom: .5rem;
+      color: #CCC;
+    }
+  
+  .news-card__details-wrapper {
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 1.5s ease, opacity 1s ease;
+    }
+
+    .news-card:hover .news-card__text-wrapper {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      .news-card:hover .news-card__title {
+        color:#d43434;
+      }
+      .news-card:hover .news-card__image {
+        transform: scale(1.2);
+        z-index: -1;
+      }
+  
+  @media (min-width: 900px) {
+      .news-card:hover .news-card__details-wrapper {
+        max-height: 20rem;
+        opacity: 1;
+      }
+    }
+  
+  .news-card__excerpt {
+      font-weight: 300;
+    }
+  
+  .news-card__read-more {
+      background: black;
+      color: #bbb;
+      display: block;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.3rem;
+      margin-top: 1rem;
+      border: 1px solid #444;
+      font-size: 0.8rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      text-decoration: none;
+      width: 7rem;
+      margin-left: auto;
+      position: relative;
+      z-index: 5;
+    }
+  
+  
+  
+
+/*------------------------------------------------------
+    4. Articels Section
+------------------------------------------------------*/
+
+.articels-content {
+    
+}
+
+.articels-content h2 {
+    position: relative;
+    color: rgb(212, 52, 52);
+}
+
+.articels-content h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 2em;
+    height: 3px;
+    background-color: #fbb81d;
+}
+
+.articels-content p {
+    text-align: justify;
+}
+
+
+/*------------------------------------------------------
+    1. Header Section
+------------------------------------------------------*/

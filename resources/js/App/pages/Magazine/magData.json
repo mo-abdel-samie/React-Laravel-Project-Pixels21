@@ -1,0 +1,298 @@
+{
+    "name" : "pixels",
+    "outherName" : "Mohamed Abdel-samie",
+    "data" : {
+        "pixels":[
+            {
+                "title":"Who Are We?",
+                "img":[
+                    "who are we.png"
+                ],
+                "content" : [
+                    "Pixels is a student activity established 6 years ago in helwan University; a non-profit organization, We are a community of makers and ambitious talented engineers, aiming to build a community that believes in science and building instead of consuming, because only by the aid of science and knowledge we can achieve  our vision, which is to spread the engineering science, to create a productive community.",
+                    "in Pixels we Have two Paths to achieve our mission, first through social media campaigns that talks about the new technologies in the world, how to use them and how to learn these technologies so if you are interested you can visit our page on facebook PIXELS EGYPT.",
+                    "We also have at least two event through the year the Camp this event is aim to give you introduction through some tracks that will be very helpful for you in the futures, the other “our mega event”. in this event we provide a complete sessions for tracks from entry level to master it, and every year we try to improve our self more and more so if you are interested, you are welcome into our family, and remember help will always given in Hogwarts."
+                ]
+            }
+        ],
+        "magazin":{
+            "name":"VOXEL",
+            "what":"VOXEL Is the 3D representation of a Pixel Simply like Square and Cube, Cube is the 3D representation of a Square.",
+            "contents":[
+                {
+                    "title":"The Beginning of EVERYTHING",
+                    "img":"BIG_BANG.png",
+                    "summary":"Everything has a beginning, everything has a start, and the best start for our magazine is by telling you the story of the beginning of..."
+                },
+                {
+                    "title":"Addiction",
+                    "img":"ADDICTION.png",
+                    "summary":"What causes, say, heroin addiction? This a really stupid question, right? It’s obvious; we all know it. Heroin..."
+                },
+                {
+                    "title":"THE MATRIX",
+                    "img":"MATRIX.png",
+                    "summary":"The red pill or the blue one?! In 1999, neo (the one) gave us a choice. Live in a fake world controlled by AI machines or fight..."
+                },
+                {
+                    "title":"I CAN SEE YOU!",
+                    "img":"EYE.png",
+                    "summary":"The human eye is an amazing mechanism, able to detect anywhere from a few photons to direct sunlight, or switch focus from the screen in front of..."
+                },
+                {
+                    "title":"The Theory of EVERYTHING",
+                    "img":"STRING_THEORY.png",
+                    "summary":"What is the true nature of the universe? To answer this questions, humans comp up with..."
+                },
+                {
+                    "title":"SIRI VS GOOGLE NOW.",
+                    "img":"GOOGLE.png",
+                    "summary":"How easy your life would be with an assistant? someone to take care of all the “little details.” Imagine how much..."
+                },
+                {
+                    "title":"QUANTUM COMPUTERS",
+                    "img":"QUANTUM.png",
+                    "summary":"For most of our history, human technology consists of our brains, fire, and sharp sticks. While fire and sharp sticks became power plants and nuclear..."
+                },
+                {
+                    "title":"TESLA CARS",
+                    "img":"SCOOL.png",
+                    "summary":"Could you imagine if oil is not as important as it is now because we all are using electric instead of..."
+                },
+                {
+                    "title":"TELEPATHY",
+                    "img":"TELE.png",
+                    "summary":"Let’s start with the basic questions we all ask. Is telepathy real? Has anyone in history ever..."
+                },
+                {
+                    "title":"BUILDING SCHOOLS IN THE CLOUDS",
+                    "img":"SCOOL.png",
+                    "summary":"What is going to be the future of learning? But first we must tell a little story about Where did the kind of learning we..."
+                }
+               
+
+            ],
+            "magazinArticles":[
+                {
+                    "title":"THE BEGINNING OF EVERYTHING",
+                    "img" : [
+                        "big bang.png"
+                    ],
+                    "content" : [
+                        "Everything has a beginning, everything has a start, and the best start for our magazine is by telling you the story of the beginning of everything. The big bang the idea that the universe was suddenly born and is not infinite. Up to the middle of the 20th century, most scientists thought of the universe as infinite and ageless. Until Einstein's theory of relativity gave us a better understanding of gravity, and Edwin Hubble discovered that galaxies are moving apart from one another, In 1964, by accident, cosmic background radiation was discovered, a relic (an object surviving from an earlier time) of the early universe, which together with other observational evidence, made the Big Bang the accepted theory in science.",
+                        "Since then, improved technology like the Hubble telescope has given us a pretty good picture of the Big Bang and the structure of the cosmos. Recent observations even seem to suggest that the expansion of the universe is accelerating. But How did this big bang work ? How can something come from nothing? First of all the Big Bang was not an explosion. It was all space stretching everywhere all at once the universe started very very small and quickly expanded to a size of a football the universe didn’t expand into anything, space was just expanding into itself. The universe cannot expand into anything because the universe has no borders there is by definition, no “outside” the universe. The universe is all there is.",
+                        "Matter and energy was not just theoretically equivalent it was so hot they were practically the same stuff. By now the universe has stretched to a billion kilometers in diameter which leads to decrease in temperature Quarks begin forming new particles, like protons and neutrons.",
+                        "Please take a moment to appreciate that by now, only one second has passed since the beginning of everything. The universe, which has grown to one hundred billion kilometers, is now cold enough to allow most of the neutrons to decay into protons and form the first atom, Hydrogen.",
+                        "Imagine the universe at this point as an extremely hot soup, 10 billion degrees celsius, filled with countless particles and energy.",
+                        "Over the next few minutes, things cooled and settled down very fast. Different atoms was formed making of a stable and electrically neutral environment some called this period the dark age because there were no stars and the hydrogen gas didn’t allow visible light to move around. But what is the meaning of light anyway when there was nothing alive that has eyes?",
+                        "When the hydrogen gas clumped together after millions of years and gravity put it under great pressure, stars and galaxies began to form their radiation dissolved the stable hydrogen gas into a plasma that still permeates the universe today and allows visible light to pass. Finally there was light. But what happened between the existing of the first hydrogen atom and the birth of the first star?",
+                        "Actually no one knows, it have been a mystery to us, there are many theories describing this period but none of them have been proven yet.",
+                        "All we know that we are part of this universe so let's not stop to explore our selves."
+                    ]
+                },
+                {
+                    "title":"ADDICTION",
+                    "img" : [
+                        "addiction.png"
+                    ],
+                    "content" : [
+                        "What causes, say, heroin addiction? This a really stupid question, right? It’s obvious; we all know it. Heroin causes heroin addiction here’s how it works: If you use heroin for 20 days, by day 21, your body would physically crave the drug ferociously.",
+                        "Because there are chemical hooks in the drug. That’s what addiction mean, but there’s a catch almost everything we think we know about addiction is wrong.",
+                        "If you, for example break your arm, you’ll be taken to a hospital and you’ll given loads of diamorphine for weeks or even months. Diamorphine is heroin it’s in fact much stronger heroin than any addict can get on the street because it’s not contaminated by all the stuff drug dealers dilute it with. There are people near you being given loads of deluxe heroin in hospitals right now.",
+                        "So at least some of them should be addicts, but this been closely studied; it doesn’t happened, you weren’t turned into a junkie by broken your arm.Why is that?",
+                        "Our current theory of addiction comes in part from series of experiments that were carried out earlier in the 20th century. The experiment is simple:",
+                        "You take a rat and put it in a cage with two water bottles. One is just water, the other is water laced with heroin. Almost every time you run this experiment, the rat will become obsessed with the drugged water and keep coming back for more, until it kills itself. But in 1970s, Bruce Alexander, a professor of psychology, noticed something odd about this experiment the rat is put in the cage all alone. It has nothing to do but take the drugs. What would happened, he wondered, if we tried this differently?! So he built rat park, which basically heaven for rats it’s a lush cage where the rats would have colored balls, tunnels to scamper down, plenty of friends to play with, everything a rat about town could want. And they would have the drugged water and the normal water bottles. But here;’ the fascinating thing in rat park rats hardly ever use the drugged water none to them ever use it compulsively; none of them ever overdose.",
+                        "But maybe this a quirk of rats right! Well, helpfully, there was a human experiment along the same lines:",
+                        "The vietnam war 20% of american troops in Vietnam were using a lot of heroin people back home were really panicked, because they thought there would be hundreds of thousands of junkies on the streets, when the war was over, but a study followed the soldiers home and found something striking:",
+                        "They didn’t go to rehab; the didn’t even go into withdrawal; 95% of them just stopped after they go home if you believe, the old theory of addiction, that makes no sense. But if you believe Prof. Alexander’s theory, it makes perfect sense, because if you’re put into horrific jungle in a foreign country where you don’t want to be, and you could be forced to kill or die at any moment, doing heroin is a great way to spend your time; but if you go back to your nice home with your friends and your family, it’s equivalent of being taken out of that first cage and put in a human rat park it’s not the chemicals, it’s your cage. We need to think about addiction differently. Human beings have an innate need to bond and connect. When we are happy and healthy, we will bond with the people around us. But when we can’t because we’re isolated, or beaten down by life, we will bond with something that gives us some sense of relief. It might be endlessly checking a smartphone; it might be video games, gambling or it might be heroin. But we will bond with something, because that is our human nature.",
+                        "The path out of unhealthy bonds is to form healthy bonds, to be connected to people you want to be present with. Addiction is just one symptom of crisis of disconnection that’s happening all around us. We all feel it. Since the 1950s, the average number of close friends an American has has been steadily declining. At the same time, the amount of floor space in their homes has been steadily increasing, to choose floor space over friend, to choose stuff over connection.",
+                        "The war on drugs we’ve been fighting for almost a century now has made everything worse. Instead of helping people heal and getting their life together, we hava cast them out from society, we have made it harder for them to get jobs and become stable, we take benefits and support away from them if we catch them with drugs, we throw them in prison cells, which are literally cages, we put people who are not well in a situation which makes them feel worse and hate them for not recovering. For too long, we’ve talked only about individual recovery from addiction. But we need now to talk about social recovery. But something has gone wrong with us as a group, we have to build a society that looks a lot more like rat park and alot less like those isolated cages. We are going to have to change the unnatural way we live and we discover each other. The opposite of addiction is not sobriety; the opposite of addiction is connection."
+                    ]
+    
+                },
+                {
+                    "title":"THE MATRIX",
+                    "img":[
+                        "the matrix.png"
+                    ],
+                    "content" : [
+                        "The red pill or the blue one?! In 1999, neo (the one) gave us a choice. Live in a fake world controlled by AI machines or fight for our freedom.",
+                        "But actually is The Matrix just a movie? Does it predict what will happen in the future,The war between machines and humans? Or we already lost this war?",
+                        "Everyday, a large portion of population is at the mercy of a rising technology, yet few actually understand what it is. Artificial intelligence. You know, HAL 9000 and marvin the paranoid android? Thanks to books and movies, each generation has formed its own fantasy of a world ruled by robots. We’ve been conditioned to expect flying cars that steer clear of traffic and robotic maids cookin our daily dinner. But if the age of AI is here, why don’t our lives look like what we expected!",
+                        "But really if you’ve ever browsed Netflix movie suggestions or told siri to order a pizza, you’re probably interacting with artificial intelligence more than you realize, and that’s kinda the point AI is designed so we don’t realize there’s a computer calling the shots. But that also makes understanding what AI is, and what it’s not, a little complicated. In basic terms, AI is a board area of computer science that makes machines seem like they have human intelligence. So it’s not only programming a computer to drive a car by obeying traffic signals, but it’s when that program also learns to exhibit signs of human-like road rage.",
+                        "As intimidating as it may seem, this technology isn’t new. Actually, for the past half-a-century, it’s been an idea ahead of its time.",
+                        "The term “artificial intelligence” was first coined back in 1956 by professor john McCarthy he called together a group of computer scientists and mathematicians to see if machines could learn like a young child does, using trail and error to develop formal reasoning.",
+                        "You can say cats have pointed ears and dogs have floppy ears, but those rules aren’t universal. Between tail length, fur and color, there are a lot of options, and that means a lot of tedious rules someone would have to program manually to help computer spot the difference but remember machine learning is about making machine learn like humans. And like any toddler that means they have to learn by experience. With machine learning, programs analyze thousands of examples to build an algorithm. It then tweaks the algorithm based on if it achieves its goal. Over time, the program actually gets smarter. That’s how machines like IBM’s watson can diagnose cancer, compose classical symphonies, some programs even mimic the way the human brain is structured, complete with neural networks that help humans and now machines solve problems. Generations have long imagined that ramifications of AI visualizing a socity where machines seek revenge and attack the human society. However the more logical and pressing question is: how will AI affect our job? Will it make your work easier? It’s not human VS machines it’s human and machine VS problems.",
+                        "The project proposal says they’ll figure out how to make machines “use language from abstractions and concepts, solve kind of problems now reserved for humans, and improve themselves.” that was more than 60 years ago. Since then, AI has remained for the most part in university classrooms and super secret labs, But during the past few years, a couple of factors have led to AI becoming the next “BIG” thing: first, huge amounts of data are being created every minute. In fact, 90% of the world’s data has been generated in the past 4 years. And now thanks to advances in processing speeds, computers can actually make sense of all this information more quickly. Very soon AI will become less artificial and more intelligence.",
+                        "Now the question is: should you brace yourself for yet another matrix movie? Not exactly. In fact, stop thinking of robots when it comes to AI, a robot is nothing more than the shell concealing what’s actually used to power the technology.",
+                        "But how do these machines actually learn? Will while it may be easy for human to know the difference between a cat and a dog, for a computer, not so much. You see, when you’re only considering physical appearance, the difference between cats and dogs can be a little gray."
+                    ]
+                },
+                {
+                    "title":"I CAN SEE YOU",
+                    "img":[
+                        "EYE.png"
+                    ],
+                    "content" : [
+                        "The human eye is an amazing mechanism, able to detect anywhere from a few photons to direct sunlight, or switch focus from the screen in front of you to the distant horizon, in a third of a second. In fact the structures required for such incredible flexibility were once considered so complex that charles darwin acknowledged that the idea of there having evolved seems absurd in the highest possible degree.",
+                        "Let's start by the very beginning of the eye itself. 5 millions years ago in the wild. Animals were either a prey or an attacker. It will surely help if the animal can see so it would avoid the attacker and also see its prey. That created the need of sight. The need that pushed the cells to evolve. ",
+                        "So the story starts where simple animals existed like “title”. It had only one cell that could only detect light, it could tell if there is light or not. That cell is called eye receptor. It helped the animal to go near that light, because wherever there's light, there will be life of other creatures which it can eat and live by.",
+                        "So how did the evolution of the eye happen, from that one cell to our complex eye now? ",
+                        "That one cell increased into many eye receptors that formed a flat line. So if a light existed, it will detect the intensity of the light whether it's bright or dark. So the animal would have to move in many directions till it reaches the brightest place. So how can the eye know the direction which light came from. That was when the eye had to evolve again and turn into a curved shape. So if the light source is up, only the eye receptors in the down area will sense it and vice versa. And the more the curve is longer and bigger the better it could know the direction. Till it turned into almost a whole circle expect a point that entered light. That also helped increase the resolution of the image the eye sees.",
+                        "So now it could know whether if it there is light or dark and the direction to reach the light source. But if there ia a shape in front of the eye, What would it see? It will see only the light around that shape, and the darkness of the shape itself which we call a shadow. So how will it see the shape better with more details? It had to evolve again. To form a lense, which could bend light rays and meet in one spot. That generates more clear image of the shape, but it's upside down! That's where the brain comes. It flip it up again.",
+                        "What about colours? Those eye receptors in the back of the eye, consisted of rods and cones. The rods are responsible for seeing in low-light conditions. The cones is responsible for colors. There are 3 kinds of cones. Ones that detect red, green or blue. Any other color is just a mix between those three colors. So when a green light wave enters the eye the cones that sense green sends a signal to the brain. If yellow light both cones of green and red send signals to the brain at the same time and the brain interprets those signals into yellow color. As for in the dark, there is only one kind of rods. So we don't see any colors, just shades between white and black."
+                    ]
+                },
+                {
+                    "title":"THE THEORY OF EVERYTHING",
+                    "img":[
+                        "theory of everything.png"
+                    ],
+                    "content" : [
+                        "What is the true nature of the universe?  To answer this questions, humans comp up with stories to describe the world. We test our stories and learn what to keep and what to throw away. But the more we learn, the more complicated and weird our stories become. Some of them so much so, that it’s really hard to know what they’re actually about. Like string theory a famous and often misunderstood story, about the nature of everything",
+                        "Why did we come up with it and is it correct? Or just an idea we should check out?!To understand the nature of reality we looked at things up close and were amazed. Wonderous landscapes in the dust, zoos of bizarre creatures, complex protein robots. All of them made from structures of molecules made up of countless even smaller things: Atoms.",
+                        "We thought they were the final layer of reality until we smashed them together really hard and discovered things that can’t be divided anymore: elementary particles.",
+                        "But now, we had a problem: they are so so small that we could no longer look at them even with the most advanced microscope out there. We can try to solve this by creating electromagnetic wave with more and smaller wavelengths. But more wavelength means more energy. So, when we touch a particle with a wave that has a lot of energy it alters it. By looking at a particle, we changed it. So, we can’t measure elementary particles precisely. This fact is so important that it has a title: the heisenberg uncertainty principle. The basis of all quantum physics.",
+                        "So, what does a particle look like then? What is its nature? We don’t know!If we look really hard, we can see a blurry sphere of influence, but not the particles themselves. We just know they exist. But if that’s the case, how can we do any science with them? We did what humans do and invented a new story: a mathematical fiction. The story of the point particle. We decided that we would pretend that a particle is a point in space. Any electron is a point with a certain electric charge and a certain mass. All indistinguishable from each other. This way physicists could define them and calculate all of their interactions. This is called quantum field theory, and solved a lot of problems. All of the standard model of particle physics is built on it and it predicts lots of things very well. Some quantum properties of the electron for example have been tested and accurate up to 0.0000000000002% ",
+                        "So, while particles are not really points, by treating them as if they were, we get a pretty good picture of the universe. Not only did this idea advanced science, it also led to a lot of real-world technology we use everyday. But there’s a huge problem: Gravity. In quantum mechanics, all physical forces are carried by certain particles. But according to Einstein’s general relativity, gravity is not a force like the others in the universe. If the universe is a play, particles are the actors, then gravity will be the stage. To put it simply, gravity is a theory of geometry. The geometry of space-time itself.",
+                        "Of distances, which we need to describe with absolute precision. But since there is no way to precisely measure things in quantum world, our story of gravity doesn’t work with our story of quantum physics. When physicists tried to add gravity to the story by inventing a new particle, the mathematics broke down and this is a big problem. If we could marry gravity to quantum physics and the standard model, we would have the theory of everything. So, very smart people came up with a new story. They asked: what is more complex than a point? A line or a string. String theory was born",
+                        "What makes string theory so elegant, is that it describes many different elementary particles as different modes of vibration of the string. Just like a guitar string vibrating differently can give you a lot of different notes, a string can give you different particles most importantly, this includes gravity. String theory promised to unify all fundamental forces of the universe.this caused enormous excitement and hype. String theory quickly graduated to a possible theory of everything unfortunately, string theory comes with a lot of strings attached. Much of the maths involving a consistent string theory does not work in our universe with its three spatial and one temporal dimensions.",
+                        "String theory requires ten dimensions to work out. So, string theorists did calculations in model universes and then try to get rid of the six additional dimensions and describe our own universe. But so far, nobody has succeeded and no prediction of string theory has been proven in an experiment. So, string theory did not reveal the nature of our universe. One could argue that in this case string theory really isn’t useful at all. Science is all about experiments and predictions. If we can’t do those, why should we bother with strings? It really is all about how we use it. Physics is based on maths. 2+2 = 4 this true no matter how you feel about it. And the maths in string theory does work out. That’s why string theory is still useful.",
+                        "With string theory we can try to answer some questions about quantum gravity that have been puzzling physicists for decades. Such how black holes work or the information paradox. String theory may point us in the right direction. So, maybe the story of string theory is not the theory of everything but just like the story off the point particle, it may be an extremely useful story. We don’t know yet what the true nature of reality is but we’ll keep coming up with stories to try and find out. Until one day, hopefully, we do know."
+                    ]
+                },
+                {
+                    "title" : "SIRI VS GOOGLE NOW",
+                    "img":[
+                        "gogle vs siri.png"
+                    ],
+                    "content" : [
+                        "How easy your life would be with an assistant? someone to take care of all the “little details.” Imagine how much more productive you would be if someone else handled scheduling doctor appointments, finding time on your calendar for meetings, and remind you of all your life events. Nowadays you can get lots of the advantages of a personal assistant right on your phone!",
+                        "Ever since Scott Forstall took the stage at the iPhone launch event in 2011 to introduce Siri to the world, the rise of virtual assistants has been growing rapidly. With so many intelligent assistants out there, it is hard to decide which one to use on a day to day basis. Microsoft's Cortana, Apple's Siri, Amazon's Alexa, and Google Assistant are the most popular virtual assistants out there right now. Three of them offer much of the same basic functionality, each assistant has its own set of strengths, weaknesses, and quirks.",
+                        "So how to decide which one to use? The answer lays in another question. Which one is the smartest virtual assistant?  ",
+                        "All three assistants handle basic tasks like setting reminders and alarms, computing maths problems, and providing weather forecasts with relative ease. While Google Assistant and Siri can call and send text messages to anyone in your contact list, Alexa can only contact people who have signed up for Alexa calling/ messaging.",
+                        "Siri can place calls as well as send text messages via WhatsApp. Google Assistant can send text messages and voice messages via WhatsApp but only when used on an Android smartphone. Alexa in comparison cannot integrate with WhatsApp in any way. When it comes to changing device settings, Google Assistant and Siri are ahead of Alexa. On both iOS and Android, Google Assistant successfully turned on the flashlight but failed to switch on mobile data. Siri managed to do the exact opposite and Alexa in comparison stated \"You don't have any smart home devices to get started\" in both cases.",
+                        "But in the battle of Siri vs Google assistant which one wins? people tested Apple's Siri versus Google's new competitor on the iPhone, and Siri loses pretty badly!! Same commands was told to both assistants. Not only was Googgle more accurate, it also presented new options that allowed to dig deeper into every topic. ",
+                        "Is Siri so far behind? The improvements Google previews for the Google Assistant are incredibly exciting for anyone who uses a virtual assistant. Thanks to features like Google Lens, which can identify objects in the real world better than any other assistant, it is beginning to edge out rivals like Amazon Alexa. Siri has certainly become more flexible with iOS 10, thanks to APIs that allow developers to tap into it. But the Google Assistant continues to do more. That’s largely thanks to the way in which Google uses our data, and because Apple refuses to do the same, Siri will always be behind. Some might see that as a good thing, but it’s not when it comes to virtual assistants.",
+                        "Will Siri catch up? Yes, Apple can catch up. Apple’s been acquiring AI companies and hiring AI researchers at a rate that it has never done before. It’s also been pushing its deep learning technology and starting to publish machine learning papers in a way that makes it clear that it is taking this field seriously for arguably the first time. ",
+                        "What about voice assistant at answering queries? It’s hard for anyone to argue against Google Assistant being the best voice assistant at answering queries. Assistant has proven time after time that it’s superior. A test was performed with Google Assistant, Siri, and Amazon Alexa smart speakers to determine which is the smartest option.",
+                        "Unsurprisingly, Google Assistant took the crown here yet again. Over 800 questions, Google Assistant understood 100% of what it was asked, answering correctly 88%. Apple’s Siri, on the other hand, answered just 74.6% of the questions correctly and understood 99.6%. Alexa, finally, understood 99% of the questions asked, answering 72.5% of them correctly. In a distant fourth place, Microsoft’s Cortana understood 99.4% of the questions but answered only 63.4% of them correctly.",
+                        "What about incase where Speakers have Accents? Google Assistant Takes the Lead again in Understanding Speakers with Accents. Speech recognition testing lab Vocalize.ai evaluated the ability of Amazon Alexa, Apple Siri and Google Assistant operating within smart speakers to correctly recognize accented speech by fluent English speakers from the U.S., India and China.",
+                        "The test evaluated the ability of each voice assistant to recognize 36 spondaic words at a constant volume and distance from the test speaker and microphone. Vocalize researchers conclude that each of the voice assistants performed well for the U.S. and Indian accents. However, Google was well ahead of its peers when recognizing the English speaker from China. Google excels in isolated word recognition of accented speech by 100%.",
+                        "What about if there’s noise? A common use case for speakers involves using the devices in the midst of other sounds. Google again stood out in this evaluation that includes background noise sounds playing at the same time the user request was being made. The speech in noise (SIN) loss was 0%, 2% and 6% for the U.S., Indian and Chinese accent corpuses respectively for Google. That rose to 8%, 11% and 14% for Siri and 11%, 15% and 19% for Alexa. ",
+                        "So which personal assistant to use? You have your answer now!"
+                    ]
+                },
+                {
+                    "title" : "QUANTUM COMPUTERS",
+                    "img":[
+                        "quantum.png"
+                    ],
+                    "content" : [
+                        "For most of our history, human technology consists of our brains, fire, and sharp sticks. While fire and sharp sticks became power plants and nuclear weapons, the biggest upgrade has happened to our brains. Since the 1960’s, the power of our brain machines has kept growing exponentially, allowing computers to get smaller and more powerful at the same time. But this process is about to meet its physical limits. Computer parts are approaching the size of an atom. To understand why this is a problem, we have to clear up some basics",
+                        "A computer is made up of very simple components  doing very simple things. Representing data, the means of processing it, and control mechanisms. Computer chips contains modules, which contain logic gates, which contain transistors. A transistor is the simplest form of a data processor in computers, basically a switch that can either block, or open the way for information coming through. ",
+                        "This information is made up of bits which can be set to either 0 or 1. Combinations of several bits are used to represent more complex information. Transistors are combined to create logic gates which still do very simple stuff. For example, an AND Gate sends an output of 1 if all of its inputs are 1, and a output of 0 otherwise. Combinations of logic gates finally form meaningful modules, say, for adding two numbers. Once you can add, you can also multiply, and once you can multiply, you can basically do anything. Since all basic operations are literally simpler than first grade math, you can imagine a computer as a group of 7-year-olds answering really basic math questions. A large enough bunch of them could compute anything.",
+                        "However, with parts getting tinier and tinier, quantum physics are making things tricky. A transistor is just an electric switch. Electricity is electrons moving from one place to another. So, a switch is a passage that can block electrons from moving in one direction. Today, a typical scale for transistors is 7 nm, which us about 16 time less than a virus diameter and 1000 times smaller than a red blood cell. As transistors are Shrinking to the size of only a few atoms, electrons may just transfer themselves to the other side of a blocked passage via a process called quantum tunnelling. Quantum physics is different than the normal physics we used to and traditional computers just stop making sense. We are approaching a real physical barrier for our technological progress.To solve this problem, scientist are trying to use these unusual quantum properties to their advantage by building quantum computers. In normal computers, bits are the smallest unit of information. Quantum computers are use qubits which can also be set to one of two values. A qubit can be any two level quantum system, such as a spin and a magnetic field, or a single photon. 0 and 1 are this system’s possible states, like the photons horizontal or vertical polarization. In the quantum world, the qubit doesn’t have to be just one of those, it can be in any proportions of both states at once. This is called superposition. But as soon as you test its value, say, by sending the photon through a filter, it has to decide to be either vertically or horizontally polarized. So as long it’s unobserved, the quib is in a superposition of probabilities for 0 and 1, and you can’t predict which it’ll be. But the instant you measure it, it collapses into one of the definite states. Superposition is a game changer. Four classical bits can be in one of two to the power of four different configurations at a time. That;s 16 possible combinations, out of which you can use just one. Four qubits is superposition, however, can be in all of those 16 combinations at once. This number grows exponentially with each extra qubit. Twenty of them can already store a million values in parallel. A really weird and unintuitive property qubits can have is entanglement, a close connection that makes each of the qubits react to a change in the other’s state instantaneously, no matter how far they are apart. This means when measuring just one entangled qubit, you can directly deduce properties of it’s partners without having to look. Qubit manipulation is a mind bender as well a normal logic gate gets a simple set of inputs and produces one definite output.",
+                        "Quantum physics is different than the normal physics we used to and traditional computers just stop making sense. We are approaching a real physical barrier for our technological progress.To solve this problem, scientist are trying to use these unusual quantum properties to their advantage by building quantum computers. In normal computers, bits are the smallest unit of information.",
+                        "Quantum computers are use qubits which can also be set to one of two values. A qubit can be any two level quantum system, such as a spin and a magnetic field, or a single photon. 0 and 1 are this system’s possible states, like the photons horizontal or vertical polarization. In the quantum world, the qubit doesn’t have to be just one of those, it can be in any proportions of both states at once. This is called superposition. But as soon as you test its value, say, by sending the photon through a filter, it has to decide to be either vertically or horizontally polarized. So as long it’s unobserved, the quib is in a superposition of probabilities for 0 and 1, and you can’t predict which it’ll be. But the instant you measure it, it collapses into one of the definite states. Superposition is a game changer. Four classical bits can be in one of two to the power of four different configurations at a time. That;s 16 possible combinations, out of which you can use just one. Four qubits is superposition, however, can be in all of those 16 combinations at once. This number grows exponentially with each extra qubit. Twenty of them can already store a million values in parallel. A really weird and unintuitive property qubits can have is entanglement, a close connection that makes each of the qubits react to a change in the other’s state instantaneously, no matter how far they are apart. This means when measuring just one entangled qubit, you can directly deduce properties of it’s partners without having to look. Qubit manipulation is a mind bender as well a normal logic gate gets a simple set of inputs and produces one definite output.",
+                        "A quantum gate manipulates an input of superpositions, rotates probabilities, and produces another superposition as its output. So a quantum computer sets up some qubits, applies quantum gates to entangle them and manipulate probability, then finally measures the outcome, collapsing superpositions to an actual sequence of 0s and 1s. What this means is that you get the entire lot of calculation and that are possible with your setup, all done at the same time.ultimately, you can only measure one if the results and it’ll only probably be the one you want so you may have to double check and try again. But by cleverly exploiting superposition and entanglement, this can be exponentially more efficient than would ever be possible on a normal computer. So, while quantum computers will not probably not replace our home computers, in some areas, they are vastly superior one of them us database searching. To find something in a database, a normal computer may have to test every single one of its entries. Quantum computer algorithms need only the square root of that time, which for large database, is a huge difference  the most famous use of quantum computers is simulations. ",
+                        "Simulations of the quantum world are very intense on resources, and even for bigger structures, such as molecules, they often lack accuracy. So why not simulate quantum physics with actual quantum physics?",
+                        "Right now, we don’t know if quantum computers will be just a specialized tool, or a bug revolution for humanity. And there’s only one way to find out"
+                    ]
+                },
+                {
+                    "title" : "TESLA",
+                    "img":[
+                        "tesla.png"
+                    ],
+                    "content" : [
+                        "Could you imagine if oil is not as important as it is now because we all are using electric instead of petrol/diesel to push our cars? Tesla is electric cars. Plenty of other automakers make electric cars, but no other automaker has brought more attention to electric cars than Tesla.",
+                        "Tesla's approach to building cars isn't that they're building a car. It's a product. Anyone in the tech industry will tell you “when you build software or a product, you're always improving it.” Always. It never stops, it mutates, you get feedback from customers, you iterate and you perfect. No other auto manufacturer in the world has this mentality of being agile. They are so dependent on external suppliers, Tesla owns their software, they are able to make changes to the vehicle and the experience by updating code versus releasing a new model altogether. It’s like a technology/innovation company that happens to focus on building cars. Their methods of building cars are well known in the tech industry, but not in the auto industry, Not yet.",
+                        "Consumer reports gave Tesla Model S their highest score ever 99 out of 100!! And it was 2013 world green car of the year, and Time magazine included it in their top 25 inventions of 2012. It is also the only car to ever score a perfect 5 star NHTSA automobile safety rating, it actually broke the machine the NHTSA use to test roof crushing!!",
+                        "If you worry about safety, not anymore! There is no combustion engine in Tesla! A typical gasoline engine literally burns gasoline less than 10 feet from you. On top of that, you sit on top of a tank full of flammable gasoline. Plus, Tesla will not roll over! Teslas have a skateboard bottom where the batteries sit and this is very heavy. That skateboard is the bulk of where the cars' weight is so the center of gravity is very low. If you recall, traditional sport utility vehicles with a high center of gravity are more likely to roll over. And with no internal combustion engine, the only maintenance costs are brakes, tires and wiper blades, no more costly trips to the mechanic!!",
+                        "In addition, Sensors all around the car. Newer Teslas with autopilot have sensors that keep an eye out a full 360 degrees all around the vehicle. While you as the driver can only look in one direction at a time, the car \"sees\" all around it and keeps track of everything within a 20 ft bubble around the car and hundreds of feet forward. If the car sees something you don't, it will automatically take action to keep you safe. If you don't see the car ahead of you slam it's brakes? Tesla sees it as soon as the car started slowing down and can start braking before you even realize what is going on. Falling asleep and drifting towards the next lane? The car will warn you. The car next to you is drifting towards you? The car will warn you.",
+                        "Is that all? No. Model S of Tesla car has a top speed of 250 km/h and it can accelerate from 0 to 97 km/hr in just 3.2 seconds!! when another model  P90D first came out, it went faster than Ferrari, Lamborghini, Porsche, etc...]. Not to mention that Tesla is good for the environment. It surely does lead to a better future.",
+                        "The engineering talent that Tesla has is insane. There is a phenomenal army of talent, guided by a guy that is nothing short of a perfectionist. Who once said, ”Either you do it perfect, or don't do it at all.” Elon Musk, CEO of Tesla. So you are in good hands!"
+                    ]
+                },
+                {
+                    "title" : "TELEPATHY",
+                    "img":[
+                        "telepath.png"
+                    ],
+                    "content" : [
+                        "Let’s start with the basic questions we all ask. Is telepathy real? Has anyone in history ever experienced telepathy?  the obvious answer is yes. Telepathy is a term used to define communication between people without the use of spoken language. Telepathy can occur between individuals, between groups or between an individual and a group.",
+                        "How many times have you thought of exactly the same words as the person sitting next to you or across the table? The possibility is far more likely that your brain had the ability to pick up their brainwaves, which we all broadcast, than the possibility that your two brains had the identical experiences and knowledge to create the same thought at the same moment. The same sort of invisible communication happens when you reach to pick up a phone call before your phone even rings. It’s even more interesting when you were just thinking of a friend or relative, and they’re the one who is calling when you reach for the phone.",
+                        "There are different kinds of telepathy. The usual understanding of telepathic communication is what occurs between minds or what is referred to as mental telepathy. But there are other forms of telepathy such as what is known as emotional telepathy. It has to do with transmission of feelings between individuals. This is mostly noticeable between mother and child.",
+                        "Emotional Telepathy, This form of telepathy is almost instinctive. Emotional telepathy can happen between humans or between humans and animals or between animals. Emotions such as fear, love, kindness, etc. are transmitted and felt when in close proximity with people experiencing those emotions. Babies can feel and react to the emotional state of their mother even before they are able to talk. Pets can also feel and react to people, and some cases even trained to do that for the purpose of protecting their owner. When a dog senses danger or feelings of harmful intent they immediately alert their owners to keep them safe.",
+                        "Mental telepathy is the transmission of thought between the minds of humans, regardless of the emotional state they are in. Mental telepathy can be controlled consciously through training and development. To be successful in telepathic experimentation, it’s like learning a new language, one should practice over and over again.",
+                        "Why should you care?",
+                        "One way of viewing this subject is that it is as historic as Alexander Graham Bell saying, “Watson, come here, I want to see you:” the first ever voice communication over the telephone!!",
+                        "we may be seeing the birth of a revolutionary means of communication that will transform our world in the way the telegraph, telephone, or television did.  Someday, instead of texting, speaking or looking into a camera to communicate, we may simply “think” our message, saving all the bother of typing or speaking.",
+                        "Finally, if mind to mind communication proves practical, it’s possible that we will learn to communicate subtle ideas that text, speech, and facial expressions cannot!! It would be forever changing the way humans relate to each other by amplifying and enriching the depth of communication.",
+                        "Words sometimes fail us. Thoughts may not!"
+                    ]
+                },
+                {
+                    "title" : "BUILD A SCHOOL IN THE CLOUD",
+                    "img":[
+                        "school.png"
+                    ],
+                    "content" : [
+                        "What is going to be the future of learning?",
+                        "But first we must tell a little story about Where did the kind of learning we do in school and where did it come from? We can look far back into the past but if you look at present-day schooling the way it is, it’s quite easy to figure out where it came from. It came from about 300 years ago, from the last and the biggest of the empires on this planet, The British Empire, imagine trying to run the show, trying to run the entire planet, without computers, without telephones, and for sure without internet just with data handwritten on pieces of paper, and traveling by ships. But the victorians actually did it. What they did was amazing. They created a global computer made of people. It’s still with us today. It’s called the bureaucratic administrative machine. In order to have that machine running, you need lots and lots of people. They made another machine to produce those people: The School. ",
+                        "The schools would produce the people who would then become parts of the  bureaucratic administrative machine. They must be identical to each other. They must know three things: they must have good handwriting, because the data is handwritten; they must be able to read; and they must be able to solve basic mathematical problems in their head. They must be so identical that you could pick one up from New Zealand and ship them to Canada and he would be instantly functional.",
+                        "The Victorians were great engineers.They engineered a system that was so robust that it's still with us today, continuously producing identical people for a machine that no longer exists. The empire is gone, so what are we doing with that design that produces these identical people, and what are we going to do next if we ever are going to do anything else with it?",
+                        "So what are jobs going to be like? Well, we know what they're like today.",
+                        "What's learning going to be like? We know what it's like today, children pouring over with their mobile phones on the one hand and then reluctantly going to school to pick up their books with their other hand. But what will it be tomorrow?",
+                        "Could it be that we don't need to go to school at all? Could it be that, at the point in time when you need to know something, you can find out in two minutes? Could it be -- a devastating question, could it be that we are heading towards or maybe in a future where knowing is obsolete?",
+                        "Encouragement seems to be the key. It is simply saying “Wow,” saluting learning There is evidence from neuroscience. The reptilian part of our brain, which sits in the center of our brain, when it's threatened, it shuts down everything else, it shuts down the prefrontal cortex, the parts which learn, it shuts all of that down. Punishment and examinations are seen as threats.",
+                        "We take our children, we make them shut their brains down, and then we say, \"Perform.\" Why did they create a system like that?  Because it was needed. There was an age in the Age of Empires when you needed those people who can survive under threat. But the Age of Empires is gone.",
+                        "What happens to creativity in our age? We need to shift that balance back from threat to pleasure"
+                    ]
+                }
+            ],
+            "magazinRiddel":[
+                {
+                    "title" : "DARE TO SOLVE",
+                    "content" : [
+                        "EINSTEIN’S RIDDLE",
+                        "Five houses painted five",
+                        "different colors stand in a row.",
+                        "One person of a different nationality lives in each house. The five home owners all drink some type of beverage, smoke a certain cigar brand, and have a certain kind of pet. But none of the owners drink the same beverage, smoke the same type of cigar, or have the same pet.",
+                        "And here are the clues:",
+                        {  
+                            "olList":[
+                                "The Brit lives in the red house.",
+                                "The Swede keeps dogs as pets.",
+                                "The Dane drinks tea.",
+                                "The green house is on the immediate left of the white house.",
+                                "The green house's owner drinks coffee.",
+                                "The owner who smokes Pall Mall rears birds.",
+                                "The owner of the yellow house smokes Dunhill.",
+                                "The owner living in the center house drinks milk.",
+                                "The Norwegian lives in the first house.",
+                                "The owner who smokes Blends lives next to the one who keeps cats.",
+                                "The owner who keeps the horse lives next to the one who smokes Dunhill.",
+                                "The owner who smokes Bluemasters drinks beer.",
+                                "The German smokes Prince.",
+                                "The Norwegian lives next to the blue house.",
+                                "The owner who smokes Blends lives next to the one who drinks water."
+                            ]
+                        },
+                        "The question is: Who owns the fish?",
+                        "YOU AND NINE OTHER HUMANS HAVE BEEN ABDUCTED BY ALIENS. THE ALIENS WOULD LIKE TO EAT YOU ALL, BUT NOT IF YOU CAN PROVE YOUR INTELLIGENCE. SO THEY PROPOSE A TEST.",
+                        "THE ALIENS LINE YOU UP, PLACING YOU IN ORDER OF HEIGHT TALLEST IN THE BACK, SHORTEST IN FRONT, AND PLACE BLACK OR WHITE HATS ON EACH OF YOU. YOU MUST FACE FORWARD, AND YOU MUSTN'T LOOK AT YOUR OWN HAT. STARTING WITH THE PERSON IN THE BACK, EACH PERSON MUST SAY A SINGLE WORD: \"BLACK\" OR \"WHITE\" TO GUESS THE COLOR OF THE HAT ON HIS OR HER OWN HEAD, DESPITE NOT BEING ABLE TO SEE IT. IF NINE OF YOU GET IT RIGHT, YOU LIVE. IF YOU DON'T, YOU'RE LUNCH. THE GOOD NEWS? YOU GET TO TALK IT THROUGH AS A GROUP FIRST.",
+                        "HOW CAN YOU SAVE YOUR SELF AND THE OTHERS FROM THE ALIENS?"
+                    ]
+                }
+            ]
+        },
+        "articles" : [
+            {
+
+            }
+
+        ] 
+    }
+}
