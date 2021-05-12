@@ -174,7 +174,7 @@ class CMSController extends Controller
             ],
         ],
     ];
-
+    
     public function showSectionForm ($id) {
         $section = Content::find($id);
 
