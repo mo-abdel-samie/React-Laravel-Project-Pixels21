@@ -15,7 +15,7 @@
                     <td>{{$course->name}}</td>
                     <td>{{$course->category}}</td>
                     <td>{{$course->rate}}</td>
-                    <td><img style="width: 7rem;" src="{{\Illuminate\Support\Facades\Storage::disk('local')->url($course->image)}}" alt="blog" /></td>
+                    <td><img style="width: 7rem;" src="{{asset($course->image)}}" alt="blog" /></td>
                     <td>
                         <a class="btn btn-primary" href="{{route('courses.edit', $course->id)}}">Edit</a>
                         <form method="post" class="d-inline-block" action="{{route('courses.destroy', $course->id)}}">

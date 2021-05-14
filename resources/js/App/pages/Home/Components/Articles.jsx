@@ -21,7 +21,7 @@ export default function Articles() {
     }, []);
 
     return (
-        <section className="articles overflow-hidden">
+        <section className="articles overflow-hidden" style={{ backgroundImage: 'url(images/bglight.png)' }}>
             <div className = "mb-5 container">
                 <div className="row">
                     <div className="col-12 py-3 pt-5">
@@ -34,7 +34,7 @@ export default function Articles() {
                     </div>
 
                     <div data-aos="fade-left" className = "col-lg-6 d-flex pl-5 align-items-center">
-                        <div>
+                        <div className={lastArticle.lang == "ar" ? "text-right" : " "} >
                             <h3>{lastArticle.title} </h3>
                             <small>Outher : {lastArticle.outher} </small>
                             <p>
@@ -57,7 +57,7 @@ export default function Articles() {
                             <div key={index} data-aos="fade-up" className="col-lg-4">
                                 <div className="card">
                                     <img alt="pixels articel" className="card-img-top" src={`/images/${article.img}`} />
-                                    <div className="card-body">
+                                    <div className={(article.lang == "ar" ? "text-right " : " ") + " card-body"} >
                                         <h5 className="card-title">{article.title}</h5>
                                         <small>Outher : {article.outher}</small>
                                         <p className="card-text">

@@ -1,9 +1,32 @@
 <?php
 
 namespace App\Http\Traits;
+use Illuminate\Support\Facades\Storage;
 
 
 trait GeneralTrait {
+
+
+    public function saveImage($image,$path){
+        $fileNameWithExt = $image->getClientOriginalName();
+
+        // Delete old file
+        $exists = Storage::disk('local')->exists($path.$fileNameWithExt);
+
+        if ($exists) {
+            Storage::delete( $path . $fileNameWithExt);
+        }
+
+        // Upload new file
+
+        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        $extension = $image->getClientOriginalExtension();
+        $fileNameToStore = $fileName.time().'.'.$extension;
+        $path = $image->move($path , $fileNameToStore);
+
+        return $path ;
+    }
+
     public function getCurrentLang() {
 
         return app()->getLocale();

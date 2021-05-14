@@ -3,13 +3,18 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\projects\CreateProjectRequest;
+use App\Http\Requests\projects\UpdateProjectRequest;
+use App\Http\Traits\GeneralTrait;
 use App\Models\admin\Project;
 use App\Models\admin\ProjectsPage;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+
 
 class ProjectsController extends Controller
 {
+    use GeneralTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -37,36 +42,29 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProjectRequest $request)
     {
-        $validatedProject =  $request->validate([
-            'title'=>'required|string',
-            'subtitle'=>'required|string',
-            'image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+        $imagePath = $this->saveImage($request->image , 'images/imgUploaded');
+
+        $project = Project::create([
+            'title'=> $request->title,
+            'subtitle'=> $request->subtitle,
+            'image'=> $imagePath,
         ]);
-        $validatedProjectPage=  $request->validate([
-            'content'=>'required',
+        $projectPage = ProjectsPage::create([
+            'project_id'=> $project->id,
+            'content'=> $request->content,
         ]);
 
-        $fileNameWithExt = $validatedProject['image']->getClientOriginalName();
-        // Delete old file
-        $exists = Storage::disk('local')->exists('public/images/projects/'.$fileNameWithExt);
-        if ($exists) {
-            Storage::delete('public/images/projects/'.$fileNameWithExt);
-        }
-        // Upload new file
-        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        $extension = $validatedProject['image']->getClientOriginalExtension();
-        $fileNameToStore = $fileName.'.'.$extension;
-        $path = $validatedProject['image']->storeAs('public/images/projects', $fileNameToStore);
-        $validatedProject['image'] = $path;
+        if ($project && $projectPage)
+            return response()->json([
+                'status' => true,
+            ]);
 
-        $project = Project::create($validatedProject);
-
-        $validatedProjectPage['project_id'] = $project->id;
-        ProjectsPage::create($validatedProjectPage);
-
-        return redirect()->route('projects.index');
+        else
+            return response()->json([
+                'status' => false,
+            ]);
     }
 
     /**
@@ -99,7 +97,7 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function uploadImage(Request $request) {
+    public function uploadImage(UpdateProjectRequest $request) {
         if($request->hasFile('upload')) {
             //get filename with extension
             $filenamewithextension = $request->file('upload')->getClientOriginalName();
@@ -127,40 +125,36 @@ class ProjectsController extends Controller
             echo $re;
         }
     }
+
     public function update(Request $request, $id)
     {
-        $validatedProject =  $request->validate([
-            'title'=>'required|string',
-            'subtitle'=>'required|string',
-            'image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-        ]);
-        $validatedProjectPage=  $request->validate([
-            'content'=>'required',
-        ]);
+        $project = Project::find($id);
 
-        if(array_key_exists('image', $validatedProject)) {
-            $fileNameWithExt = $validatedProject['image']->getClientOriginalName();
-            // Delete old file
-            $exists = Storage::disk('local')->exists('public/images/projects/'.$fileNameWithExt);
-            if ($exists) {
-                Storage::delete('public/images/projects/'.$fileNameWithExt);
-            }
-            // Upload new file
-            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $validatedProject['image']->getClientOriginalExtension();
-            $fileNameToStore = $fileName.'.'.$extension;
-            $path = $validatedProject['image']->storeAs('public/images/projects', $fileNameToStore);
-            $validatedProject['image'] = $path;
-        } else {
-            $project = Project::find($id);
-            $validatedProject['image'] = $project->image;
+        if($request->hasFile('image')){
+            $imagePath = $this->saveImage($request->image , 'images/imgUploaded');
+        }else {
+            $imagePath = $project->image;
         }
-        Project::where('id',$id)->update($validatedProject);
 
-        ProjectsPage::where('project_id',$id)->update($validatedProjectPage);
+        $project = Project::where('id',$id)->update([
+            'title'=> $request->title,
+            'subtitle'=> $request->subtitle,
+            'image'=> $imagePath,
+        ]);
 
-        return redirect()->route('projects.index');
-    }
+         $projectPage = ProjectsPage::where('project_id',$id)->update([
+            'content'=> $request->content,
+        ]);
+
+        if ($project && $projectPage)
+            return response()->json([
+                'status' => true,
+            ]);
+
+        else
+            return response()->json([
+                'status' => false,
+            ]);    }
 
     /**
      * Remove the specified resource from storage.

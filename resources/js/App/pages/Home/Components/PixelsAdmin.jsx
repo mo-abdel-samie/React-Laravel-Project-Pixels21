@@ -15,12 +15,19 @@ export default function PixelsAdmin() {
 
 
     return (
-        <section className = "Admin about pt-3 pb-5 pt-3 mt-0" style={{backgroundColor:"#3a4d8f",color:"#e3dce8 !important"}}>
+        <section className = "Admin about py-5  mt-0" style={{ backgroundImage:"url(images/bgdark.png)" }}>
             <div className=" container">
 
                 <div className="row">
-                    <div className="col-12 text-center mb-5">
+                    <div className="col-12 text-center py-3 pb-5">
                         <h2 className="mb-2 text-white">OUR SUPERVISOR</h2>
+                    </div>
+
+
+                    <div className="col-lg-6 video-image" style={{backgroundImage:"url(/images/drProaa2.jpg)",backgroundSize:"cover",backgroundPosition:"center",height:"387px"}}>
+                        <p>
+                            <i onClick={handleVideoClick} data-toggle="modal" data-target="#showvideo" className="fa fa-play bg-secondary"></i>
+                        </p>
                     </div>
 
                     <div  className="col-lg-6 text-center align-items-center justify-content-center d-flex">
@@ -28,12 +35,6 @@ export default function PixelsAdmin() {
                             <img src="/images/dr_roaa.jpg" alt="Pixels" style={{height:"350px",width:"350px"}} className=" img-fluid rounded-circle dr-roaa mb-3"/>
                             <h3 className=" text-white">Dr.Roaa</h3>
                         </div>
-                    </div>
-
-                    <div className="col-lg-6 video-image" style={{backgroundImage:"url(/images/drProaa2.jpg)",backgroundSize:"cover",backgroundPosition:"center",height:"387px"}}>
-                        <p>
-                            <i onClick={handleVideoClick} data-toggle="modal" data-target="#showvideo" className="fa fa-play bg-secondary"></i>
-                        </p>
                     </div>
                 </div>
             </div>

@@ -55,11 +55,17 @@
 
         </main>
 
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+{{--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>--}}
+
+
+        @yield('scripts')
 
         <!--   Core JS Files   -->
         <script src="{{ asset('admin/js/core/jquery.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('admin/js/core/popper.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('admin/js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
+
 
         <!-- Plugin for the Perfect Scrollbar -->
         <script src="{{ asset('admin/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>

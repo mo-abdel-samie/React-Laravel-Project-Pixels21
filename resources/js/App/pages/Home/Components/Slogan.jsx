@@ -8,8 +8,8 @@ import {Container} from "react-bootstrap";
 
 const Slogan = () => {
   return (
-        <section className="py-5 mt-5">
-          <Container className="slogan-container py-lg-5 pt-4">
+        <section className="py-5 " style={{ backgroundImage : 'url(images/bgdark.png)' }}>
+          <Container className="slogan-container py-lg-5 pt-4 rounded">
             <div className="row text-center justify-content-between">
               <div className="item1 col-lg-4 col-sm-3" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="50">
                 <FaBookReader className="w-100 mb-3 text-color" size={'2.5rem'} />

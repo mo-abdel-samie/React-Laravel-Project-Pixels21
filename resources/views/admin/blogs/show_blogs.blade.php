@@ -12,7 +12,7 @@
         <tbody>
             @foreach($blogs as $blog)
                 <tr>
-                    <td><img style="width: 7rem;" src="{{\Illuminate\Support\Facades\Storage::disk('local')->url($blog->image)}}" alt="blog" /></td>
+                    <td><img style="width: 7rem;" src="{{asset($blog->image)}}" alt="blog" /></td>
                     <td>{{$blog->title}}</td>
                     <td>{{$blog->subtitle}}</td>
                     <td>{{$blog->author}}</td>

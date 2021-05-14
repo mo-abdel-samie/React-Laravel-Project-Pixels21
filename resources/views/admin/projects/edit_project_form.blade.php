@@ -1,34 +1,49 @@
 @extends('admin.layout')
+
 @section('content')
-    {{--    {{dd([$sectionInputTypes, $data])}}--}}
-    <h1>Edit Article :</h1>
-    <div class="row justify-content-center w-100">
-        <form action="{{route('projects.update', $project->id)}}" method="post" enctype="multipart/form-data" class="col-6">
+    <div class="card card-nav-tabs">
+        <h1 class="card-header card-header-info">Edit project :</h1>
 
-            @csrf
-            @method('PUT')
+        <div class="alert alert-success" id="success_msg" style="display: none;">
+            Updated Successfully
+        </div>
 
-            <div class="form-group mb-5">
-                <label for="title" >Title :</label>
-                <input type="text" name="title" value="{{$project->title}}" placeholder="Title" id="title" class="form-control"/>
+        <div class="alert alert-danger" id="danger_msg" style="display: none;">
+            Failed to update
+        </div>
+
+        <div class="card-body py-5">
+            <div class="row justify-content-center w-100">
+                <form id="updateProjectForm" method="post" enctype="multipart/form-data" class="col-6">
+                    @csrf
+                    <div class="main mb-5">
+                        <div class="form-group">
+                            <label for="title" >Title :</label>
+                            <input type="text" name="title" placeholder="Title" id="title" class="form-control"/>
+                            <small id="title_error" class="form-text text-danger"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subtitle" >Subtitle :</label>
+                            <input type="text" name="subtitle" placeholder="Subtitle" id="subtitle" class="form-control"/>
+                            <small id="subtitle_error" class="form-text text-danger"></small>
+                        </div>
+
+                        <div>
+                            <label for="project-image" >projetc-image :</label>
+                            <input type="file" name="image" id="image" class="form-control"/>
+                            <small id="image_error" class="form-text text-danger"></small>
+                        </div>
+                    </div>
+
+                    <div class="project-UI">
+                        <textarea class="form-control" id="content" name="content"></textarea>
+                        <small id="content_error" class="form-text text-danger"></small>
+                    </div>
+                    <button id="update_project" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-
-            <div class="form-group mb-5">
-                <label for="subtitle" >Subtitle :</label>
-                <input type="text" name="subtitle" value="{{$project->subtitle}}" placeholder="Subtitle" id="subtitle" class="form-control"/>
-            </div>
-
-            <div class="mb-5">
-                <img src="{{\Illuminate\Support\Facades\Storage::disk('local')->url($project->image)}}" class="w-25" alt="article" />
-                <input type="file" name="image" id="image" class="form-control"/>
-            </div>
-
-            <div class="project-UI">
-                <textarea class="form-control" id="content" name="content">{{$project->content}}</textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
@@ -39,3 +54,39 @@
         });
     </script>
 @endsection
+
+@section('scripts')
+    <script>
+
+        $(document).on('click', '#update_project', function (e) {
+            e.preventDefault();
+
+            var formData = new FormData($('#updateProjectForm')[0]);
+
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('projects.update', $project->id)}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    if (data.status == true) {
+                        $('#success_msg').show();
+                        $('#danger_msg').hide();
+                    }
+                }, error: function (reject) {
+                    var response = $.parseJSON(reject.responseText);
+                    $.each(response.errors, function (key, val) {
+                        $("#" + key + "_error").text(val[0]);
+                    });
+                    $('#danger_msg').show();
+                    $('#success_msg').hide();
+                }
+            });
+        });
+
+
+    </script>
+@stop

@@ -3,20 +3,23 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\GeneralTrait;
 use Illuminate\Http\Request;
 use App\Models\admin\Content;
-use Illuminate\Support\Facades\Storage;
+
 
 class CMSController extends Controller
 {
+    use GeneralTrait;
+
+
     public function index() {
         return view('admin/index') ;
     }
 
     public function showSections () {
         $sections = Content::all();
-//        dd($sections);
-        return view('admin.cms.sections', ['sections'=>$sections]) ;
+        return view('admin.cms.sections', ['sections'=>$sections]);
     }
 
     // array contains inputs of every section with input types
@@ -174,7 +177,7 @@ class CMSController extends Controller
             ],
         ],
     ];
-    
+
     public function showSectionForm ($id) {
         $section = Content::find($id);
 
@@ -184,6 +187,7 @@ class CMSController extends Controller
         // return section data and section of same name in sections array
         return view('admin.cms.form', ['id'=>$section->id, 'section_name'=>$section->section_name, 'data'=>$data, 'sectionInputTypes'=>$this->sections[$section->section_name],]);
     }
+
     public function updateSection (Request $request, $id) {
         $section = Content::find($id);
         $sectionInputs = $this->sections[$section->section_name];
@@ -194,6 +198,7 @@ class CMSController extends Controller
             // get array contains arrays of inputs of each section type
             $data[]= $$inputType;
         }
+
         $validated = [];
         if (count($data)>1) { // There's multiple input types in section
             for ($i=count($data)-1;$i>0;$i--) {
@@ -208,23 +213,11 @@ class CMSController extends Controller
             foreach ($validated as $key => $input) {
                 if($input!=null) {
                     if(is_file($input)) {
-                        $fileNameWithExt = $input->getClientOriginalName();
-                        // Delete old file
-                        $exists = Storage::disk('local')->exists('public/images/cms/'.$fileNameWithExt);
-                        if ($exists) {
-                            Storage::delete('public/images/cms/'.$fileNameWithExt);
-                        }
-                        // Upload new file
-                        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                        $extension = $input->getClientOriginalExtension();
-                        $fileNameToStore = $fileName.'.'.$extension;
-                        $path = $input->storeAs('public/images/cms', $fileNameToStore);
+                        $path = $this->saveImage($input, 'public/images/cms/');
                         $validated[$key] = $path;
                     }
                 }
-//                dd($input);
             }
-//            dd($validated);
         }
 
         Content::where('id',$id)->update(['section_content'=>$validated]);

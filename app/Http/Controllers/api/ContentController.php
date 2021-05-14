@@ -17,72 +17,70 @@ class ContentController extends Controller
 
     // CMS
     public $data =[];
-    public function getSections($keys) {
+    public function getSections($key, $keys, $message) {
         $sections = Content::all();
         foreach ($sections as $section) {
             if(in_array($section->section_name, $keys)) {
                 $this->data[$section->section_name] = json_decode($section->section_content);
             }
         }
+        return $this->returnData($key, $this->data, $message);
     }
 
     public function getHomeContent() {
-        $this->getSections(['home_header', 'home_slogan', 'home_about', 'home_statistics', 'home_supervisor']);
-        return $this->data;
+        return $this->getSections('home_content', ['home_header', 'home_slogan', 'home_about', 'home_statistics', 'home_supervisor'], 'data returned');
+
     }
     public function getAboutContent() {
-        $this->getSections(['about_header', 'about_slogan', 'about_FAQ']);
-        return $this->data;
+        return $this->getSections('about_content', ['about_header', 'about_slogan', 'about_FAQ'], 'data returned');
+
     }
     public function getCoursesContent() {
-        $this->getSections(['courses_page', 'course_item']);
-        return $this->data;
+        return $this->getSections('courses_content', ['courses_page', 'course_item'], 'data returned');
     }
     public function getProjectsContent() {
-        $this->getSections(['projects_header']);
-        return $this->data;
+        return $this->getSections('projects_content', ['projects_header'], 'data returned');
     }
     public function getBlogsContent() {
-        $this->getSections(['home_header', 'home_slogan']);
-        return $this->data;
+        return $this->getSections('blogs_content', ['home_header', 'home_slogan'], 'data returned');
     }
     public function getEventsContent() {
-        $this->getSections(['events_header']);
-        return $this->data;
+        return $this->getSections('blogs_content', ['events_header'], 'data returned');
     }
 
 
     // Blogs
     public function getAllBlogs() {
         $blogs = Blog::all();
-        return $blogs;
+        return $this->returnData('blogs', $blogs, 'data returned');
     }
     /// Single Blog
     public function getSingleBlog(Request $request) {
         $blog = Blog::find($request->id);
-        return $blog;
+        return $this->returnData('blog', $blog, 'data returned');
     }
 
     // Courses
     public function getAllCourses() {
         $courses = Course::all();
-        return $courses;
+        return $this->returnData('courses', $courses, 'data returned');
     }
     /// Single Course
     public function getSingleCourse(Request $request) {
         $course = Course::find($request->id);
-        return $course;
+        $course->coursePage;
+        return $this->returnData('course', $course, 'data returned');
     }
 
     // Projects
     public function getAllProjects() {
         $projects = Project::all();
-        return $projects;
+        return $this->returnData('projects', $projects, 'data returned');
     }
     /// Single Project
     public function getSingleProject(Request $request) {
         $project = Project::find($request->id);
         $project->projectPage;
-        return $project;
+        return $this->returnData('project', $project, 'data returned');
     }
 }

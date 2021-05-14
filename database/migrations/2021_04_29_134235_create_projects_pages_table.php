@@ -16,9 +16,10 @@ class CreateProjectsPagesTable extends Migration
         Schema::create('projects_pages', function (Blueprint $table) {
             $table->id();
             $table->longText('content');
-            $table->foreignId('project_id')->constrained('projects')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreignId('project_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

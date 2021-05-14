@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\courses\CreateCourseRequest;
+use App\Http\Requests\courses\UpdateCourseRequest;
 use App\Models\admin\Course;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Models\admin\CoursesPage;
+use App\Http\Traits\GeneralTrait;
 
 class CoursesController extends Controller
 {
+    use GeneralTrait;
     /**
      * Display a listing of the resource.
      *
@@ -38,47 +41,43 @@ class CoursesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCourseRequest $request)
     {
-        $courseValidated =  $request->validate([
-            'name'=>'required|string',
-            'category'=>'required|string',
-            'rate'=>'required|digits_between:1,5',
-            'image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+
+        $courseImagePath = $this->saveImage($request->image , 'images/imgUploaded');
+        $courseHeaderImagePath = $this->saveImage($request->header_image , 'images/imgUploaded');
+
+        //Save Data To New Row
+        $course = Course::create([
+            'name'=> $request->name,
+            'category'=> $request->category,
+            'rate'=> $request->rate,
+            'image'=> $courseImagePath,
         ]);
-        $courseDetails = $request->validate([
-            'header_desc'=>'required|string',
-            'description'=>'required|string',
-            'content'=>'required|array',
+
+
+        $coursePage = CoursesPage::create([
+            'header_image'=> $courseHeaderImagePath,
+            'header_desc'=> $request->header_desc,
+            'description'=> $request->description,
+            'includes_titles'=> json_encode($request->includes_titles),
+            'includes_icons'=> json_encode($request->includes_icons),
+            'content'=> json_encode($request->content),
+            'share_links'=> json_encode($request->share_links),
+            'average_rate'=> $request->average_rate,
+            'course_id'=> $course->id,
         ]);
-        $courseDetailsIncludes = $request->validate([
-            'includes_titles'=>'required|array',
-            'includes_icons'=>'required|array',
-        ]);
-        $courseDetails['includes'] = [
-            'titles'=>array_values($courseDetailsIncludes['includes_titles']) ,
-            'icons'=>array_values($courseDetailsIncludes['includes_icons'])
-        ];
-        $courseValidated['details'] = json_encode($courseDetails);
 
+        if ($course && $coursePage)
+            return response()->json([
+                'status' => true,
+            ]);
+        else
+            return response()->json([
+                'status' => false,
+            ]);
 
-        $fileNameWithExt = $courseValidated['image']->getClientOriginalName();
-        // Delete old file
-        $exists = Storage::disk('local')->exists('public/images/courses/'.$fileNameWithExt);
-        if ($exists) {
-            Storage::delete('public/images/courses/'.$fileNameWithExt);
-        }
-        // Upload new file
-        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        $extension = $courseValidated['image']->getClientOriginalExtension();
-        $fileNameToStore = $fileName.'.'.$extension;
-        $path = $courseValidated['image']->storeAs('public/images/courses', $fileNameToStore);
-        $courseValidated['image'] = $path;
-
-        Course::create($courseValidated);
-
-        return redirect()->route('courses.index');
-
+        return redirect()->back();
 
     }
 
@@ -102,7 +101,16 @@ class CoursesController extends Controller
     public function edit($id)
     {
         $course = Course::find($id);
-        $course->details = json_decode($course->details);
+        $course->header_image  = $course->coursePage->header_image;
+        $course->header_desc  = $course->coursePage->header_desc;
+        $course->description  = $course->coursePage->description;
+        $course->average_rate  = $course->coursePage->average_rate;
+        $course->includes_titles  = json_decode($course->coursePage->includes_titles);
+        $course->includes_icons  = json_decode($course->coursePage->includes_icons);
+        $course->content  = json_decode($course->coursePage->content);
+        $course->share_links  = json_decode($course->coursePage->share_links);
+
+//        dd($course);
         return view('admin.courses.edit_course_form', ['course'=>$course]);
     }
 
@@ -113,51 +121,45 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCourseRequest $request, $id)
     {
-        $courseValidated =  $request->validate([
-            'name'=>'required|string',
-            'category'=>'required|string',
-            'rate'=>'required|digits_between:1,5',
-            'image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-        ]);
-        $courseDetails = $request->validate([
-            'header_desc'=>'required|string',
-            'description'=>'required|string',
-            'content'=>'required|array',
-        ]);
-        $courseDetailsIncludes = $request->validate([
-            'includes_titles'=>'required|array',
-            'includes_icons'=>'required|array',
-        ]);
-        $courseDetails['includes'] = [
-            'titles'=>array_values($courseDetailsIncludes['includes_titles']) ,
-            'icons'=>array_values($courseDetailsIncludes['includes_icons'])
-        ];
-        $courseValidated['details'] = json_encode($courseDetails);
+        $course = Course::find($id);
 
-        if(array_key_exists('image', $courseValidated)) {
-
-        $fileNameWithExt = $courseValidated['image']->getClientOriginalName();
-        // Delete old file
-        $exists = Storage::disk('local')->exists('public/images/courses/'.$fileNameWithExt);
-        if ($exists) {
-            Storage::delete('public/images/courses/'.$fileNameWithExt);
-        }
-        // Upload new file
-        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        $extension = $courseValidated['image']->getClientOriginalExtension();
-        $fileNameToStore = $fileName.'.'.$extension;
-        $path = $courseValidated['image']->storeAs('public/images/courses', $fileNameToStore);
-        $courseValidated['image'] = $path;
+        if($request->hasFile('image')){
+            $courseImagePath = $this->saveImage($request->image , 'images/imgUploaded');
+            $courseHeaderImagePath = $this->saveImage($request->header_image , 'images/imgUploaded');
         } else {
-            $course = Course::find($id);
-            $courseValidated['image'] = $course->image;
+            $courseImagePath = $course->image;
+            $courseHeaderImagePath = $course->coursePage->header_image;
         }
 
-        Course::where('id', $id)->update($courseValidated);
+        //Update Data To New Row
+        $course = Course::where('id', $id)->update([
+            'name'=>             $request->name,
+            'category'=>         $request->category,
+            'rate'=>             $request->rate,
+            'image'=>            $courseImagePath,
+        ]);
 
-        return redirect()->route('courses.index');
+        $coursePage = CoursesPage::where('course_id', $id)->update([
+            'header_image'=>     $courseHeaderImagePath,
+            'header_desc'=>      $request->header_desc,
+            'description'=>      $request->description,
+            'average_rate'=>     $request->average_rate,
+            'includes_titles'=>  json_encode($request->includes_titles),
+            'includes_icons'=>   json_encode($request->includes_icons),
+            'content'=>          json_encode($request->content),
+            'share_links'=>      json_encode($request->share_links),
+        ]);
+
+        if ($course && $coursePage)
+            return response()->json([
+                'status' => true,
+            ]);
+        else
+            return response()->json([
+                'status' => false,
+            ]);
     }
 
     /**

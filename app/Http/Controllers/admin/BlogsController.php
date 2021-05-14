@@ -4,12 +4,16 @@ namespace App\Http\Controllers\admin;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\blogs\CreateBlogRequest;
+use App\Http\Requests\blogs\UpdateBlogRequest;
+use App\Http\Traits\GeneralTrait;
 use App\Models\admin\Blog;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+
 
 class BlogsController extends Controller
 {
+    use GeneralTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -40,33 +44,27 @@ class BlogsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateBlogRequest $request)
     {
-        $validated =  $request->validate([
-            'title'=>'required|string',
-            'subtitle'=>'required|string',
-            'author'=>'required|string',
-            'content'=>'required|string|min:10|max:5000',
-            'image'=>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+        $imagePath = $this->saveImage($request->image , 'images/imgUploaded');
+
+        $blog = Blog::create([
+            'title'=> $request->title,
+            'subtitle'=> $request->subtitle,
+            'author'=> $request->author,
+            'content'=> $request->content,
+            'image'=> $imagePath,
         ]);
 
+        if ($blog)
+            return response()->json([
+                'status' => true,
+            ]);
 
-        $fileNameWithExt = $validated['image']->getClientOriginalName();
-        // Delete old file
-        $exists = Storage::disk('local')->exists('public/images/blogs/'.$fileNameWithExt);
-        if ($exists) {
-            Storage::delete('public/images/blogs/'.$fileNameWithExt);
-        }
-        // Upload new file
-        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        $extension = $validated['image']->getClientOriginalExtension();
-        $fileNameToStore = $fileName.'.'.$extension;
-        $path = $validated['image']->storeAs('public/images/blogs', $fileNameToStore);
-        $validated['image'] = $path;
-
-        Blog::create($validated);
-
-        return redirect()->route('blogs.index');
+        else
+            return response()->json([
+                'status' => false,
+            ]);
     }
 
     /**
@@ -99,36 +97,33 @@ class BlogsController extends Controller
      * @param  int  $idq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBlogRequest $request, $id)
     {
-        $validated =  $request->validate([
-            'title'=>'required|string',
-            'subtitle'=>'required|string',
-            'author'=>'required|string',
-            'content'=>'required|string|min:10|max:5000',
-            'image'=>'file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-        ]);
-        if (array_key_exists('image', $validated)) {
-            $fileNameWithExt = $validated['image']->getClientOriginalName();
-            // Delete old file
-            $exists = Storage::disk('local')->exists('public/images/blogs/'.$fileNameWithExt);
-            if ($exists) {
-                Storage::delete('public/images/blogs/'.$fileNameWithExt);
-            }
-            // Upload new file
-            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $validated['image']->getClientOriginalExtension();
-            $fileNameToStore = $fileName.'.'.$extension;
-            $path = $validated['image']->storeAs('public/images/blogs', $fileNameToStore);
-            $validated['image'] = $path;
+        $blog = Blog::find($id);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $this->saveImage($request->image , 'images/imgUploaded');
         } else {
-            $blog = Blog::find($id);
-            $validated['image'] = $blog->image;
+            $imagePath = $blog->image;
         }
 
-        Blog::where('id', $id)->update($validated);
+        $blog = Blog::where('id', $id)->update([
+            'title'=> $request->title,
+            'subtitle'=> $request->subtitle,
+            'author'=> $request->author,
+            'content'=> $request->content,
+            'image'=> $imagePath,
+        ]);
 
-        return redirect()->route('blogs.index');
+        if ($blog)
+            return response()->json([
+                'status' => true,
+            ]);
+
+        else
+            return response()->json([
+                'status' => false,
+            ]);
     }
 
     /**

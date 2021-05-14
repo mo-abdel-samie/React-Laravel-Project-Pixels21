@@ -1,37 +1,94 @@
 @extends('admin.layout')
+
 @section('content')
-    {{--    {{dd([$sectionInputTypes, $data])}}--}}
-    <h1>Edit Article :</h1>
-    <div class="row justify-content-center w-100">
-        <form action="{{route('blogs.update', $blog->id)}}" method="post" enctype="multipart/form-data" class="col-6">
-            @csrf
-            @method('PUT')
-            <div class="form-group mb-5">
-                <label for="title" >Title :</label>
-                <input type="text" name="title" value="{{$blog->title}}" placeholder="Title" id="title" class="form-control"/>
+    <div class="card card-nav-tabs">
+        <h1 class="card-header card-header-info">Edit Article :</h1>
+
+        <div class="alert alert-success" id="success_msg" style="display: none;">
+            Updated Successfully
+        </div>
+
+        <div class="alert alert-danger" id="danger_msg" style="display: none;">
+            Failed to update
+        </div>
+
+        <div class="card-body py-5">
+            <div class="row justify-content-center w-100">
+                <form id="updateBlogForm" method="POST" action="" enctype="multipart/form-data" class="col-6">
+                    @csrf
+                    @method('PATCH')
+                    <div class="form-group">
+                        <label for="title" >Title :</label>
+                        <input type="text" name="title" value="{{$blog->title}}" placeholder="Title" id="title" class="form-control"/>
+                        <small id="title_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subtitle" >Subtitle :</label>
+                        <input type="text" name="subtitle" value="{{$blog->subtitle}}" placeholder="Subtitle" id="subtitle" class="form-control"/>
+                        <small id="subtitle_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author" >Author :</label>
+                        <input type="text" name="author" value="{{$blog->author}}" placeholder="Author" id="author" class="form-control"/>
+                        <small id="author_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="">
+                        <label for="blog-image" >blog-image :</label>
+                        <input type="file" name="image" id="blog-image" class="form-control"/>
+                        <img src="{{asset($blog->image)}}" style="width: 7rem;">
+                        <small id="image_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content" >Content</label>
+                        <textarea type="text" name="content" placeholder="Content" id="content" class="form-control">{{$blog->content}}</textarea>
+                        <small id="content_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <button id="update_blog" class="btn btn-primary">Update</button>
+                </form>
             </div>
-
-            <div class="form-group mb-5">
-                <label for="subtitle" >Subtitle :</label>
-                <input type="text" name="subtitle" value="{{$blog->subtitle}}" placeholder="Subtitle" id="subtitle" class="form-control"/>
-            </div>
-
-            <div class="form-group mb-5">
-                <input type="text" name="author" value="{{$blog->author}}" placeholder="Author" id="author" class="form-control"/>
-            </div>
-
-
-            <div class="form-group mb-5">
-                <label for="content">Content :</label>
-                <textarea name="content" placeholder="Must be between " id="content" cols="70" rows="6" >{{$blog->content}}</textarea>
-            </div>
-
-            <div class="mb-5">
-                <img src="{{\Illuminate\Support\Facades\Storage::disk('local')->url($blog->image)}}" class="w-25" alt="article" />
-                <input type="file" name="image" id="image" class="form-control"/>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 @endsection
+
+
+
+@section('scripts')
+    <script>
+
+        $(document).on('click', '#update_blog', function (e) {
+            e.preventDefault();
+
+            var formData = new FormData($('#updateBlogForm')[0]);
+
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('blogs.update', $blog->id)}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    if (data.status == true) {
+                        $('#success_msg').show();
+                        $('#danger_msg').hide();
+                    }
+                }, error: function (reject) {
+                    var response = $.parseJSON(reject.responseText);
+                    $.each(response.errors, function (key, val) {
+                        $("#" + key + "_error").text(val[0]);
+                    });
+                    $('#danger_msg').show();
+                    $('#success_msg').hide();
+                }
+            });
+        });
+
+
+    </script>
+@stop

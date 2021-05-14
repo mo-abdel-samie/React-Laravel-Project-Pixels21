@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->string('category');
             $table->integer('rate');
             $table->string('image');
-            $table->longText('details');
             $table->timestamps();
         });
     }
