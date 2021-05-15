@@ -18,7 +18,8 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('author');
-            $table->longText('content');
+            $table->longText('content_en');
+            $table->longText('content_ar');
             $table->string('image');
             $table->timestamps();
         });

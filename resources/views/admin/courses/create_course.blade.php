@@ -128,29 +128,31 @@
     <script>
         function addContent(event) {
             const parent = event.target.parentElement;
-            parent.innerHTML += `
-                <div class="form-group">
-                    <input type="text" name="content[]" placeholder="content" id="content" class="form-control"/>
-                    <small id="content_error" class="form-text text-danger"></small>
-                </div>`;
+            var node = document.createElement("DIV");
+            node.className = "content";
+            node.innerHTML = `
+                    <input type="text" name="content[]" id="content" placeholder="content" class="form-control"/>
+                    <small id="content_error" class="form-text text-danger"></small>`;
+            parent.appendChild(node);
         }
 
         function addInclude(event) {
             const parent = event.target.parentElement;
-            parent.innerHTML += `
-                <div class="row">
+            var node = document.createElement("DIV");
+            node.className = "row";
+            node.innerHTML = `
                     <div class="col">
                         <label for="title" >title :</label>
-                        <input type="text" name="includes_titles[]" placeholder="title" id="includes_titles" class="form-control"/>
+                        <input type="text" name="includes_titles[]" id="includes_titles" placeholder="title" class="form-control"/>
                         <small id="includes_titles_error" class="form-text text-danger"></small>
                     </div>
 
                     <div class="col">
                         <label for="title" >title :</label>
-                        <input type="text" name="includes_icons[]" placeholder="icon" id="includes_icons" class="form-control"/>
+                        <input type="text" name="includes_icons[]" id="includes_icons" placeholder="icon" class="form-control"/>
                         <small id="includes_icons_error" class="form-text text-danger"></small>
-                    </div>
-                </div>`;
+                    </div>`;
+            parent.appendChild(node);
         }
     </script>
 @endsection

@@ -43,9 +43,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="content" >Content</label>
-                        <textarea type="text" name="content" placeholder="Content" id="content" class="form-control">{{$blog->content}}</textarea>
-                        <small id="content_error" class="form-text text-danger"></small>
+                        <label for="content_en" >Content_en</label>
+                        <textarea type="text" name="content_en" placeholder="Content_en" id="content_en" class="form-control">{{$blog->content_en}}</textarea>
+                        <small id="content_en_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content_ar" >Content_en</label>
+                        <textarea type="text" name="content_ar" placeholder="Content_ar" id="content_ar" class="form-control">{{$blog->content_ar}}</textarea>
+                        <small id="content_ar_error" class="form-text text-danger"></small>
                     </div>
 
                     <button id="update_blog" class="btn btn-primary">Update</button>

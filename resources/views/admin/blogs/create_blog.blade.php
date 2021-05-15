@@ -41,9 +41,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="content" >Content</label>
-                        <textarea type="text" name="content" placeholder="Content" id="content" class="form-control"></textarea>
-                        <small id="content_error" class="form-text text-danger"></small>
+                        <label for="content_en" >Content</label>
+                        <textarea type="text" name="content_en" placeholder="Content_en" id="content_en" class="form-control"></textarea>
+                        <small id="content_en_error" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content_ar" >Content</label>
+                        <textarea type="text" name="content_ar" placeholder="Content_ar" id="content_ar" class="form-control"></textarea>
+                        <small id="content_ar_error" class="form-text text-danger"></small>
                     </div>
 
                     <button id="save_blog" class="btn btn-primary">Submit</button>
@@ -65,7 +71,8 @@
             $('#subtitle_error').text('');
             $('#author_error').text('');
             $('#image_error').text('');
-            $('#content_error').text('');
+            $('#content_en_error').text('');
+            $('#content_ar_error').text('');
 
             var formData = new FormData($('#saveBlogForm')[0]);
 

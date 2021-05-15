@@ -1,13 +1,26 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { RiTimer2Line } from 'react-icons/ri'
-import { AiOutlineUnlock } from 'react-icons/ai'
-import { FaRegArrowAltCircleRight } from 'react-icons/fa'
+import React, { useContext } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { RiTimer2Line } from 'react-icons/ri';
+import { AiOutlineUnlock } from 'react-icons/ai';
+import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaStar } from 'react-icons/fa';
-import CoursesItem from '../../../Components/CoursesItem'
+import CoursesItem from '../../../Components/CoursesItem';
+
+import { CoursesContext } from "../../../Contexts/CoursesContext";
+
 
 function Course() {
+
+  const {course} = useContext(CoursesContext);
+  const {includes_titles, includes_icons, content, share_links, average_rate} = {...course}; 
+  //  useEffect(() => {
+  //   if (props.match.params.id && props.match.params.id === course.id) {
+  //     setIsActive(true);
+  //   } else {
+  //     setIsActive(false);
+  //   }
+  // }, [activeCourse]);
 
   return (
     <>
@@ -16,16 +29,16 @@ function Course() {
         <Row className="justify-content-between w-100 align-items-start py-120">
           <Col lg={8} sm={12}>
             <div className="mb-5 desc">
-              <h3 className="title desc-title">Description</h3>
-              <p className="text1">Labour, of evaluated would he the a the our what is in the arduous sides behavioural is which the have didn't kicked records the it framework by the for traveler sure the can most well her. Entered have break himself cheek, and with activity, for bit of text.</p>
-              <p className="text1">Not off be and of where and the together absolutely in a step I which where the original are feel as he of rung. On be walls. Create over to king intended musical relief. Project the of if both sort have a to clues okay. Produce the coast searched clarinet of it and ocean.</p>
+              <h3 className="title desc-title"></h3>
+              <p className="text1"></p>
+              <p className="text1"></p>
             </div>
 
             <div className="mb-5 content">
               <h3 className="title content-title">Content</h3>
-              <p className="text2"><FaRegArrowAltCircleRight className="text-color d-inline"/> Introduction: a UXD Parable</p>
-              <p className="text2"><FaRegArrowAltCircleRight className="text-color d-inline"/> Introduction: a UXD Parable</p>
-              <p className="text2"><FaRegArrowAltCircleRight className="text-color d-inline"/> Introduction: a UXD Parable</p>
+              {course.content.map((item, index)=> (
+                <p key={index} className="text2"><FaRegArrowAltCircleRight className="text-color d-inline"/>{item}</p>                  
+              ))}
             </div>
 
             <div className="mb-5 requirements">
@@ -120,8 +133,13 @@ function Course() {
           <Col lg={4} sm={12}>
             <div className="mb-5 inclides">
               <h3 className="title inclides-title">This course includes</h3>
-              <p className="text1"><RiTimer2Line className="d-inline"/> hours on-demand video</p>
-              <p className="text1"><AiOutlineUnlock className="d-inline"/> Full lifetime access</p>
+              {course.includes_icons.map((icon, index)=> (
+                <>
+                  <p key={index} className="text1"><RiTimer2Line className="d-inline"/></p>                 
+                  <p key={index} className="text1"><AiOutlineUnlock className="d-inline"/>{course.includes_titles[index]}</p>
+                </>
+              ))}
+              
             </div>
 
             <div className="mb-5 tags">

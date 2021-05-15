@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from 'react-icons/ai/';
 import waves from '../../../../../../public/images/Waves-shape.png';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 
-
+import { CoursesContext } from "../../../Contexts/CoursesContext";
 function Header() {
+
+  const {activeCourse} = useContext(CoursesContext);
+  const {header_image, header_desc} = {...activeCourse};
+
   return (
     <>
       <header style={{"backgroundImage": "url('/images/header/Course.png')"}} className="page-header">
@@ -18,8 +22,7 @@ function Header() {
                   <h1 className="courses-header-title mb-4"><span className="text-color">Ux</span> Design Fundamentals</h1>
                 </Col>
                 <Col lg={8}>
-                  <p className="text-color2 course-header-desc">Completely mesh interactive web-readiness via mission-critical growth strategies. Seamlessly maintain granular communities through cross-platform niches.</p>
-                  <p className="text-color2 course-header-desc">Holisticly unleash end-to-end users after long-term high-impact channels. Globally synthesize proactive bandwidth with interactive content.</p>
+                  <p className="text-color2 course-header-desc">{header_desc}</p>
                 </Col>
               </Row>
               <Link to="/" className="courses-header-link p-2 text-light">get started for free</Link>

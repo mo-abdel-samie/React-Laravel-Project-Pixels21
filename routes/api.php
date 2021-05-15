@@ -18,7 +18,7 @@ use App\Http\Controllers\api\ContentController;
 //    return $request->user();
 //});
 
-Route::group(['middleware'=>['api', 'checkPassword']], function () {
+Route::group(['middleware'=>['api']], function () {
 
     Route::group(['prefix'=>'cms'], function () {
         Route::get('/home', [ContentController::class, 'getHomeContent']);
@@ -34,8 +34,9 @@ Route::group(['middleware'=>['api', 'checkPassword']], function () {
         Route::get('/get-blog-byId', [ContentController::class,'getSingleBlog']);
     });
 
+    Route::get('/categories', [ContentController::class,'getCategories']);
     Route::group(['prefix'=>'courses'], function () {
-        Route::get('/all', [ContentController::class,'getAllCourses']);
+        Route::get('/category', [ContentController::class,'getCategoryCourses']);
         Route::get('/get-course-byId', [ContentController::class,'getSingleCourse']);
     });
 

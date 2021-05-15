@@ -81,8 +81,8 @@
                             @endforeach
                         </div>
 
-                        <div class="form-group contents">
-                            <h3>Content</h3>
+                        <div class="contents">
+                            <h3>Content List</h3>
                             <button type="button" onclick="addContent(event)" class="add btn btn-info">Add Input</button>
                             @foreach($course->content as $content)
                                 <div class="form-group">
@@ -92,9 +92,9 @@
                             @endforeach
                         </div>
 
-                        <div class="form-group includes">
+                        <div class="includes">
                             <h3>Includes list</h3>
-                            <button type="button" onclick="addInclude(event)" class="add">Add Input</button>
+                            <button type="button" onclick="addInclude(event)" class="add btn btn-info">Add Input</button>
                             @for($i=0;$i<count($course->includes_titles);$i++)
                                 <div class="row">
                                     <div class="col">
@@ -125,29 +125,31 @@
     <script>
         function addContent(event) {
             const parent = event.target.parentElement;
-            parent.innerHTML += `
-                <div class="form-group">
-                    <input type="text" name="content[]" placeholder="content" id="content" class="form-control"/>
-                    <small id="content_error" class="form-text text-danger"></small>
-                </div>`;
+            var node = document.createElement("DIV");
+            node.className = "content";
+            node.innerHTML = `
+                    <input type="text" name="content[]" id="content" placeholder="content" class="form-control"/>
+                    <small id="content_error" class="form-text text-danger"></small>`;
+            parent.appendChild(node);
         }
 
         function addInclude(event) {
             const parent = event.target.parentElement;
-            parent.innerHTML += `
-                <div class="row">
+            var node = document.createElement("DIV");
+            node.className = "row";
+            node.innerHTML = `
                     <div class="col">
                         <label for="title" >title :</label>
-                        <input type="text" name="includes_titles[]" placeholder="title" id="includes_titles" class="form-control"/>
+                        <input type="text" name="includes_titles[]" id="includes_titles" placeholder="title" class="form-control"/>
                         <small id="includes_titles_error" class="form-text text-danger"></small>
                     </div>
 
                     <div class="col">
-                        <label for="icon" >icon :</label>
-                        <input type="text" name="includes_icons[]" placeholder="icon" id="includes_icons" class="form-control"/>
+                        <label for="title" >title :</label>
+                        <input type="text" name="includes_icons[]" id="includes_icons" placeholder="icon" class="form-control"/>
                         <small id="includes_icons_error" class="form-text text-danger"></small>
-                    </div>
-                </div>`;
+                    </div>`;
+            parent.appendChild(node);
         }
     </script>
 @endsection

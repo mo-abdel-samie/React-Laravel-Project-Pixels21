@@ -8,22 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'category', 'rate', 'image'];
+    protected $fillable = ['name', 'category_id', 'rate', 'image', 'craeted_at', 'updated_at'];
 
     public function coursePage() {
         return $this->hasOne(CoursesPage::class);
     }
 
-    public function scopeAllCat($query) {
-        return $query->where('category', 'all');
-    }
-    public function scopePower($query) {
-        return $query->where('category', 'power');
-    }
-    public function scopeCs($query) {
-        return $query->where('category', 'cs');
-    }
-    public function scopeMechanics($query) {
-        return $query->where('category', 'mechanics');
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }

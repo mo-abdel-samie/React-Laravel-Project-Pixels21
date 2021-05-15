@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Traits\GeneralTrait;
 use App\Models\admin\Blog;
 use App\Models\admin\Content;
+use App\Models\admin\Category;
 use App\Models\admin\Course;
 use App\Models\admin\Project;
 use Illuminate\Http\Request;
@@ -60,15 +61,26 @@ class ContentController extends Controller
         return $this->returnData('blog', $blog, 'data returned');
     }
 
-    // Courses
-    public function getAllCourses() {
-        $courses = Course::all();
+    // Categories
+    public function getCategories() {
+        $categories = Category::all();
+        return $this->returnData('categories', $categories, 'data returned');
+    }
+    // Category Courses
+    public function getCategoryCourses(Request $request) {
+        $category = Category::where('name', $request->category)->get()[0];
+         $courses = $category->courses;
+        // $courses = Course::where('category_id', $category->id);
         return $this->returnData('courses', $courses, 'data returned');
     }
     /// Single Course
     public function getSingleCourse(Request $request) {
         $course = Course::find($request->id);
         $course->coursePage;
+        $course->coursePage->includes_titles = json_decode($course->coursePage->includes_titles);
+        $course->coursePage->includes_icons = json_decode($course->coursePage->includes_icons);
+        $course->coursePage->content = json_decode($course->coursePage->content);
+        $course->coursePage->share_links = json_decode($course->coursePage->share_links);
         return $this->returnData('course', $course, 'data returned');
     }
 
