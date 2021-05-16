@@ -16,13 +16,13 @@ const BlogsState = (props) => {
 
   const getAllBlogs = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`localhost:8000/api/v1/blogs`);
+    const { data } = await axios.get(`/blogs`);
     console.log(data);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data });
   };
   const getBlogById = async (id) => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`localhost:8000/api/v1/blogs/get-project-byId/${id}`);
+    const { data } = await axios.get(`/blogs/get-project-byId/${id}`);
     console.log(data);
     dispatch({ type: TYPES.GET_BLOG_BY_ID, payload: data });
   };

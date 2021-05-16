@@ -69,7 +69,7 @@ class ContentController extends Controller
     // Category Courses
     public function getCategoryCourses(Request $request) {
         $category = Category::where('name', $request->category)->get()[0];
-         $courses = $category->courses;
+        $courses = $category->courses;
         // $courses = Course::where('category_id', $category->id);
         return $this->returnData('courses', $courses, 'data returned');
     }

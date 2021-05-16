@@ -23,6 +23,10 @@ class CreateCoursesPagesTable extends Migration
             $table->longText('content');
             $table->string('share_links');
             $table->string('average_rate');
+            $table->foreignId('course_id')
+            ->constrained('courses')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

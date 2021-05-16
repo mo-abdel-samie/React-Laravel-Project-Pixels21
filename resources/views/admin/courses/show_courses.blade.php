@@ -13,7 +13,7 @@
             @foreach($courses as $course)
                 <tr>
                     <td>{{$course->name}}</td>
-                    <td>{{$course->category}}</td>
+                    <td>{{$course->category->name}}</td>
                     <td>{{$course->rate}}</td>
                     <td><img style="width: 7rem;" src="{{asset($course->image)}}" alt="blog" /></td>
                     <td>

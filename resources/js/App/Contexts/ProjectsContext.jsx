@@ -16,13 +16,13 @@ const ProjectsState = (props) => {
 
   const getAllProjects = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`localhost:8000/api/v1/projects`);
+    const { data } = await axios.get(`/projects`);
     console.log(data);
     dispatch({ type: TYPES.GET_ALL_PROJECTS, payload: data });
   };
   const getProjectById = async (id) => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`localhost:8000/api/v1/projects/get-project-byId/${id}`);
+    const { data } = await axios.get(`/projects/get-project-byId/${id}`);
     console.log(data);
     dispatch({ type: TYPES.GET_PROJECT_BY_ID, payload: data });
   };

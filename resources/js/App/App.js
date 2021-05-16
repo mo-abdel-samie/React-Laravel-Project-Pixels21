@@ -37,36 +37,39 @@ import SingleCoursePage from './pages/SingleCourse/SingleCoursePage';
 import { CoursesState } from "./Contexts/CoursesContext";
 import { BlogsState } from './Contexts/BlogsContext';
 import { ProjectsState } from './Contexts/ProjectsContext';
+import { CMSState } from './Contexts/CMSContext';
 
 class App extends React.Component {
   render(){
     return (
       <Router>
-        <Navbar />
-        <ToastContainer />
-        <Switch>
-          <Route path="/home">                         <HomePage />                </Route>
-          <Route path="/about">                        <AboutPage />               </Route>
-          <CoursesState>
-            <Route path="/courses/category=:name">     <CoursesPage />             </Route>
-            <Route path="/course/:id">                 <SingleCoursePage />        </Route>
-          </CoursesState>
-          <ProjectsState>
-            <Route path="/project-contest">            <ProjectsContst />          </Route>
-            <Route path="/project/:id">                <Project />                 </Route>
-          </ProjectsState>
-          <BlogsState>
-            <Route path="/blogs">                      <Blogs />                   </Route>
-            <Route path="/blog/:id">                   <Blog />                    </Route>
-          </BlogsState>
-          <Route path="/pixels-events">                <EventsPage />              </Route>
-          <Route path="/magazine">                     <Magazine />                </Route>
-          <Redirect exact from="/" to="/home" /> 
-          <Route >
-            <Error />
-          </Route>
-        </Switch>
-        <Footer />
+        <CMSState>
+          <Navbar />
+          <ToastContainer />
+          <Switch>
+            <Route path="/home">                         <HomePage />                </Route>
+            <Route path="/about">                        <AboutPage />               </Route>
+            <CoursesState>
+              <Route path="/courses/:category">     <CoursesPage />             </Route>
+              <Route path="/course/:id">                 <SingleCoursePage />        </Route>
+            </CoursesState>
+            <ProjectsState>
+              <Route path="/project-contest">            <ProjectsContst />          </Route>
+              <Route path="/project/:id">                <Project />                 </Route>
+            </ProjectsState>
+            <BlogsState>
+              <Route path="/blogs">                      <Blogs />                   </Route>
+              <Route path="/blog/:id">                   <Blog />                    </Route>
+            </BlogsState>
+            <Route path="/pixels-events">                <EventsPage />              </Route>
+            <Route path="/magazine">                     <Magazine />                </Route>
+            <Redirect exact from="/" to="/home" /> 
+            <Route >
+              <Error />
+            </Route>
+          </Switch>
+          <Footer />
+        </CMSState>
       </Router>
     );
   }

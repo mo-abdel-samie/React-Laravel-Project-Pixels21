@@ -25,7 +25,7 @@ class CreateCourseRequest extends FormRequest
     {
         return [
             'name'              =>'required|string',
-            'category'          =>'required|string',
+            'category_id'       =>'required|integer',
             'rate'              =>'required|numeric|min:0|max:10',
             'image'             =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
             'header_image'      =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
@@ -45,8 +45,8 @@ class CreateCourseRequest extends FormRequest
         return [
             'name.required'                 =>'name is required',
             'name.string'                   =>'name must be string',
-            'category.required'             =>'category is required',
-            'category.string'               =>'category must be string',
+            'category_id.required'             =>'category is required',
+            'category_id.integer'               =>'category must be string',
             'rate.required'                 =>'rate is required',
             'rate.string'                   =>'rate must be string',
             'image.required'                =>'image is required',

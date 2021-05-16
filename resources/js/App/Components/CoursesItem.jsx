@@ -20,7 +20,7 @@ function CoursesItem(props) {
 
         {courses.length === 0 && !loading ? (
           <Col xs={12}>
-            <h2 className="not-found"> Courses Not Found </h2>
+            <h2 className="not-found text-danger text-center"> Courses Not Found </h2>
           </Col>
           ) : courses.map((course, index)=> {
             return (

@@ -26,7 +26,13 @@
 
                     <div class="form-group">
                         <label for="category" >category :</label>
-                        <input type="text" name="category" placeholder="category" id="category" class="form-control"/>
+                        <select name="category_id" placeholder="category" id="category_id" class="form-control">
+                            <optgroup class="text-info" label="Select category">
+                                @foreach ($categories as $category)
+                                    <option class="text-info" value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
                         <small id="category_error" class="form-text text-danger"></small>
                     </div>
 
@@ -165,7 +171,7 @@
             e.preventDefault();
 
             $('#name_error').text('');
-            $('#category_error').text('');
+            $('#category_id_error').text('');
             $('#rate_error').text('');
             $('#image_error').text('');
             $('#header_desc_error').text('');

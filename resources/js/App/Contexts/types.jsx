@@ -4,13 +4,26 @@ export const SET_LOADING = "SET_LOADING";
 // export const SET_ACTIVE_ = "SET_ACTIVE_";
 // export const CLEAR_ACTIVE_ = "CLEAR_ACTIVE_";
 
+// CMS
+export const GET_HOME_CONTENT = "GET_HOME_CONTENT";
+export const GET_ABOUT_CONTENT = "GET_ABOUT_CONTENT";
+export const GET_COURSES_CONTENT = "GET_COURSES_CONTENT";
+export const GET_BLOGS_CONTENT = "GET_BLOGS_CONTENT";
+export const GET_PROJECTS_CONTENT = "GET_PROJECTS_CONTENT";
+export const GET_EVENTS_CONTENT = "GET_EVENTS_CONTENT";
+export const GET_SOCIALS_CONTENT = "GET_SOCIALS_CONTENT";
+export const GET_FOOTER_CONTENT = "GET_FOOTER_CONTENT";
+
+// Courses
 export const GET_CATEGORIES = "GET_CATEGORIES";
 export const GET_CATEGORY_COURSES = "GET_CATEGORY_COURSES";
 export const GET_COURSE_BY_ID = "GET_COURSE_BY_ID";
 
+// Blogs
 export const GET_ALL_BLOGS = "GET_ALL_BLOGS";
 export const GET_BLOG_BY_ID = "GET_BLOG_BY_ID";
 
+// Projects
 export const GET_ALL_PROJECTS = "GET_ALL_PROJECTS";
 export const GET_PROJECT_BY_ID = "GET_PROJECT_BY_ID";
 

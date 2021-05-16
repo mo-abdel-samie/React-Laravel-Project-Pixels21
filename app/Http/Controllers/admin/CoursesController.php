@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\courses\CreateCourseRequest;
 use App\Http\Requests\courses\UpdateCourseRequest;
+use App\Models\admin\Category;
 use App\Models\admin\Course;
 use App\Models\admin\CoursesPage;
 use App\Http\Traits\GeneralTrait;
@@ -22,6 +23,7 @@ class CoursesController extends Controller
     public function index()
     {
         $courses = Course::all();
+
         return view('admin.courses.show_courses', ['courses'=>$courses]);
     }
 
@@ -32,7 +34,8 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('admin.courses.create_course');
+        $categories = Category::all();
+        return view('admin.courses.create_course', ['categories'=>$categories]);
     }
 
     /**
@@ -50,7 +53,7 @@ class CoursesController extends Controller
         //Save Data To New Row
         $course = Course::create([
             'name'=> $request->name,
-            'category'=> $request->category,
+            'category_id'=> $request->category_id,
             'rate'=> $request->rate,
             'image'=> $courseImagePath,
         ]);
@@ -109,9 +112,9 @@ class CoursesController extends Controller
         $course->includes_icons  = json_decode($course->coursePage->includes_icons);
         $course->content  = json_decode($course->coursePage->content);
         $course->share_links  = json_decode($course->coursePage->share_links);
-
-//        dd($course);
-        return view('admin.courses.edit_course_form', ['course'=>$course]);
+        $course->category_id = $course->category->id;
+        $categories = Category::all();
+        return view('admin.courses.edit_course_form', ['course'=>$course, 'categories'=>$categories]);
     }
 
     /**
@@ -136,7 +139,7 @@ class CoursesController extends Controller
         //Update Data To New Row
         $course = Course::where('id', $id)->update([
             'name'=>             $request->name,
-            'category'=>         $request->category,
+            'category_id'=> $request->category_id,
             'rate'=>             $request->rate,
             'image'=>            $courseImagePath,
         ]);

@@ -27,7 +27,15 @@
 
                         <div class="form-group">
                             <label for="category" >category :</label>
-                            <input type="text" name="category" id="category" value="{{$course->category}}" placeholder="category" class="form-control"/>
+                            <select name="category_id" placeholder="category" id="category_id" class="form-control">
+                                @foreach ($categories as $category)
+                                    @if($category->id == $course->category_id)
+                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                    @else
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>                            
                             <small id="category_error" class="form-text text-danger"></small>
                         </div>
 

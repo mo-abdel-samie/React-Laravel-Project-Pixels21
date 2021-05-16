@@ -8,7 +8,7 @@ const CoursesContext = React.createContext();
 const CoursesState = (props) => {
   const initialState = {
     loading: false,
-    categories: ['All', 'CS', 'Power', 'Mechanics'],
+    categories: ['All', 'Cs'],
     courses: [],
     course: {},
   };
@@ -17,21 +17,24 @@ const CoursesState = (props) => {
 
   const getCategories = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { categories } = await axios.get(`localhost:8000/api/v1/categories`);
-    console.log(categories);
-    dispatch({ type: TYPES.GET_CATEGORIES, payload: categories });
+    let { data } = await axios.get(`/categories`).catch((err)=>{console.log("Error: ", err);});
+    console.log("categories");
+    console.log(data.categories);
+    dispatch({ type: TYPES.GET_CATEGORIES, payload: data.categories });
   }
   const getCategoryCourses = async (category) => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { courses } = await axios.get(`localhost:8000/api/v1/courses/${category}`);
-    console.log(courses);
-    dispatch({ type: TYPES.GET_CATEGORY_COURSES, payload: courses });
+    let { data } = await axios.get(`/courses/${category}`).catch((err)=>{console.log("Error: ", err);});
+    console.log("courses");
+    console.log(data.courses);
+    dispatch({ type: TYPES.GET_CATEGORY_COURSES, payload: data.courses });
   };
   const getCourseById = async (id) => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { course } = await axios.get(`localhost:8000/api/v1/courses/get-course-byId/${id}`);
-    console.log(course);
-    dispatch({ type: TYPES.GET_COURSE_BY_ID, payload: course });
+    let { data } = await axios.get(`/courses/get-course-byId/${id}`).catch((err)=>{console.log("Error: ", err);});
+    console.log("course");
+    console.log(data.course);
+    dispatch({ type: TYPES.GET_COURSE_BY_ID, payload: data.course });
   };
 
 

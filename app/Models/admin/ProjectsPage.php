@@ -9,7 +9,8 @@ class ProjectsPage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'project_id', 'craeted_at', 'updated_at'];
+    protected $fillable = ['content', 'project_id', 'created_at', 'updated_at'];
+    protected $hidden = ['created_at', 'updated_at'];
 
     public function project() {
         return $this->belongsTo(Project::class);

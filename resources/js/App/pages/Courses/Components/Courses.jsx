@@ -1,5 +1,5 @@
 import { get } from 'jquery';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row, Spinner, Col } from 'react-bootstrap';
 import { NavLink, withRouter } from 'react-router-dom';
 import CoursesItem from '../../../Components/CoursesItem';
@@ -9,31 +9,30 @@ import { CoursesContext } from "../../../Contexts/CoursesContext";
 const Courses = (props) => {
 
   const {loading, categories, getCategories, getCategoryCourses} = useContext(CoursesContext);
-
-  // const [coursesCategory, setCoursesCategory] = useState('all');
   
-  const categoryHandler = (category) => {
-    props.history.replace(`/courses/category=${category}`);
-    if (category.trim()) {
-      getCategoryCourses(category);
-    } else {
-      setAlert("Search Bar is empty !", "danger");
-    }  
-  }
+  useEffect(() => {
+    getCategories();
+    console.log('a');
+  }, []);
+  
+  const [activeCategory, setCategory] = useState('All');
 
   useEffect(() => {
-    getCategories();    
-    if (props.location.search && props.location.search.includes("category")) {
-      let key = props.location.search.split("category=")[1];
-      if (key && key.includes("&")) {
-        key = key.split("&")[0];
-      }
-      if (key) {
-        key = decodeURIComponent(key);
-        getCategoryCourses($key);
-      }
-    }
-  }, []);
+    getCategoryCourses(activeCategory);
+    console.log('b');
+    // if (props.location.search && props.location.search.includes("category")) {
+    //   console.log('key');
+    //   let key = props.location.search.split("category=")[1];
+    //   if (key && key.includes("&")) {
+    //     key = key.split("&")[0];
+    //   }
+    //   if (key) {
+    //     key = decodeURIComponent(key);
+    //     console.log(key);
+    //     getCategoryCourses(key);
+    //   }
+    // }
+  }, [activeCategory]);
 
   return (
     
@@ -50,14 +49,14 @@ const Courses = (props) => {
 
           {categories.length === 0 && !loading ? (
             <Col xs={12}>
-              <h2 className="not-found text-danger"> Categories Not Found </h2>
+              <h2 className="not-found text-danger text-center"> Categories Not Found </h2>
             </Col>
           ) : (
             <ul className="nav my-4 justify-content-center">
               {categories.map((category, index)=> {
                 return (
                   <li key={index} className="nav-item mx-2">
-                    <NavLink to={"/courses/category="+category} onClick={()=>categoryHandler(category)} activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category}</NavLink>
+                    <NavLink to={"/courses/"+category} onClick={()=>setCategory(category)} activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category}</NavLink>
                   </li>
                 );
               })}
