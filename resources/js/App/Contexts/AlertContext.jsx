@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import * as TYPES from "./types";
+import {Api} from "../Api";
 
 const AlertContext = React.createContext();
 

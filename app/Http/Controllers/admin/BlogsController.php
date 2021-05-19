@@ -52,8 +52,8 @@ class BlogsController extends Controller
             'title'=> $request->title,
             'subtitle'=> $request->subtitle,
             'author'=> $request->author,
-            'content_en'=> $request->content_en,
-            'content_ar'=> $request->content_ar,
+            'content'=> $request->content,
+            'language'=> $request->language,
             'image'=> $imagePath,
         ]);
 
@@ -112,8 +112,8 @@ class BlogsController extends Controller
             'title'=> $request->title,
             'subtitle'=> $request->subtitle,
             'author'=> $request->author,
-            'content_en'=> $request->content_en,
-            'content_ar'=> $request->content_ar,
+            'content'=> $request->content,
+            'language'=> $request->language,
             'image'=> $imagePath,
         ]);
 

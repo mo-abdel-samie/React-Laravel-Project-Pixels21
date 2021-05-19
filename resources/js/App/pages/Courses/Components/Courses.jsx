@@ -1,41 +1,23 @@
 import { get } from 'jquery';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Container, Row, Spinner, Col } from 'react-bootstrap';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CoursesItem from '../../../Components/CoursesItem';
 import { CoursesContext } from "../../../Contexts/CoursesContext";
 
 
-const Courses = (props) => {
+const Courses = () => {
 
-  const {loading, categories, getCategories, getCategoryCourses} = useContext(CoursesContext);
-  
+  const { loading, categories, getCategories } = useContext(CoursesContext);
+
   useEffect(() => {
     getCategories();
     console.log('a');
   }, []);
-  
-  const [activeCategory, setCategory] = useState('All');
 
-  useEffect(() => {
-    getCategoryCourses(activeCategory);
-    console.log('b');
-    // if (props.location.search && props.location.search.includes("category")) {
-    //   console.log('key');
-    //   let key = props.location.search.split("category=")[1];
-    //   if (key && key.includes("&")) {
-    //     key = key.split("&")[0];
-    //   }
-    //   if (key) {
-    //     key = decodeURIComponent(key);
-    //     console.log(key);
-    //     getCategoryCourses(key);
-    //   }
-    // }
-  }, [activeCategory]);
 
   return (
-    
+
     <section className="courses py-120">
       <Container>
         <h2 className="courses-title text-center">Unlimited access to more than 1600 courses</h2>
@@ -56,7 +38,7 @@ const Courses = (props) => {
               {categories.map((category, index)=> {
                 return (
                   <li key={index} className="nav-item mx-2">
-                    <NavLink to={"/courses/"+category} onClick={()=>setCategory(category)} activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category}</NavLink>
+                    <NavLink to={"/courses/"+category.name} activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category.name}</NavLink>
                   </li>
                 );
               })}
@@ -64,11 +46,11 @@ const Courses = (props) => {
           )}
         </Row>
 
-        <CoursesItem allCourses={true}/>
+        <CoursesItem allCourses='yes'/>
 
       </Container>
     </section>
   )
 }
 
-export default withRouter(Courses);
+export default Courses;

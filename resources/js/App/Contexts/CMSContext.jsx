@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import axios from "axios";
+import {Api} from "../Api";
 
 import * as TYPES from "./types";
 
@@ -22,56 +22,56 @@ const CMSState = (props) => {
 
   const getHomeContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/home`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/home`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.home_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.home_content });
   };
 
   const getAboutContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/about`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/about`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.about_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.about_content });
   };
 
   const getCoursesContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/courses`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/courses`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.courses_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.courses_content });
   };
   
   const getBlogsContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/blogs`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/blogs`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.blogs_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.blogs_content });
   };
 
   const getProjectsContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/projects`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/projects`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.projects_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.projects_content });
   };
 
   const getEventsContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/events`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/events`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.events_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.events_content });
   };
 
   const getSocialsContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/socials`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/socials`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.socials_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.socials_content });
   };
 
   const getFooterContent = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/cms/footer`).catch((err)=>{console.log("Error: ", err);});
+    const { data } = await Api.get(`/cms/footer`).catch((err)=>{console.log("Error: ", err);});
     console.log(data.footer_content);
     dispatch({ type: TYPES.GET_ALL_BLOGS, payload: data.footer_content });
   };

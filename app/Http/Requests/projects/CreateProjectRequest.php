@@ -34,7 +34,6 @@ class CreateProjectRequest extends FormRequest
 
     public function messages()
     {
-
         return [
             'title.required'=>'Title is required',
             'title.string'=>'Title must be string',

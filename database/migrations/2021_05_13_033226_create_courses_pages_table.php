@@ -21,7 +21,8 @@ class CreateCoursesPagesTable extends Migration
             $table->string('includes_titles');
             $table->string('includes_icons');
             $table->longText('content');
-            $table->string('share_links');
+            $table->string('share_links_urls');
+            $table->string('share_links_icons');
             $table->string('average_rate');
             $table->foreignId('course_id')
             ->constrained('courses')

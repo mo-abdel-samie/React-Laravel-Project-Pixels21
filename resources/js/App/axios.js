@@ -2,7 +2,7 @@ import Axios from 'axios';
 
 
 export const axios = Axios.create({
-    baseURL: "https://pixelseg.com/api",     
+    baseURL: "http://pixelseg./api",     
     headers : {
         // Authorization:"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjM4NSwiaXNfYnVzaW5lc3MiOnRydWUsImFjY2VzcyI6ImF1dGgiLCJpYXQiOjE2MDgyMjk2MTJ9.49q-PsQzS8TJUO44UY_hCHnQkVtPbq30M1jdOyY3Nxc"
     },

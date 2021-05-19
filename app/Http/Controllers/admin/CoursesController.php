@@ -23,8 +23,8 @@ class CoursesController extends Controller
     public function index()
     {
         $courses = Course::all();
-
-        return view('admin.courses.show_courses', ['courses'=>$courses]);
+        $categories = Category::all();
+        return view('admin.courses.show_courses', ['courses'=>$courses, 'categories'=>$categories]);
     }
 
     /**
@@ -66,7 +66,8 @@ class CoursesController extends Controller
             'includes_titles'=> json_encode($request->includes_titles),
             'includes_icons'=> json_encode($request->includes_icons),
             'content'=> json_encode($request->content),
-            'share_links'=> json_encode($request->share_links),
+            'share_links_urls'=> json_encode($request->share_links_urls),
+            'share_links_icons'=> json_encode($request->share_links_icons),
             'average_rate'=> $request->average_rate,
             'course_id'=> $course->id,
         ]);
@@ -111,7 +112,8 @@ class CoursesController extends Controller
         $course->includes_titles  = json_decode($course->coursePage->includes_titles);
         $course->includes_icons  = json_decode($course->coursePage->includes_icons);
         $course->content  = json_decode($course->coursePage->content);
-        $course->share_links  = json_decode($course->coursePage->share_links);
+        $course->share_links_urls = json_decode($course->coursePage->share_links_urls);
+        $course->share_links_icons = json_decode($course->coursePage->share_links_icons);
         $course->category_id = $course->category->id;
         $categories = Category::all();
         return view('admin.courses.edit_course_form', ['course'=>$course, 'categories'=>$categories]);
@@ -146,13 +148,14 @@ class CoursesController extends Controller
 
         $coursePage = CoursesPage::where('course_id', $id)->update([
             'header_image'=>     $courseHeaderImagePath,
-            'header_desc'=>      $request->header_desc,
-            'description'=>      $request->description,
-            'average_rate'=>     $request->average_rate,
-            'includes_titles'=>  json_encode($request->includes_titles),
-            'includes_icons'=>   json_encode($request->includes_icons),
-            'content'=>          json_encode($request->content),
-            'share_links'=>      json_encode($request->share_links),
+            'header_desc'=>        $request->header_desc,
+            'description'=>        $request->description,
+            'average_rate'=>       $request->average_rate,
+            'includes_titles'=>    json_encode($request->includes_titles),
+            'includes_icons'=>     json_encode($request->includes_icons),
+            'content'=>            json_encode($request->content),
+            'share_links_urls'=>   json_encode($request->share_links_urls),
+            'share_links_icons'=>  json_encode($request->share_links_icons),
         ]);
 
         if ($course && $coursePage)

@@ -115,15 +115,15 @@
         <ul class="nav">
 
             @foreach ($sideBar as $LOneTitle=>$LOneDetails) {{-- Level one Of Sidebar (|) --}}
-                <li class="nav-item 
+                <li class="nav-item
                     @foreach ($LOneDetails["routes"] as $route) {{-- Route active for Level one Of Sidebar --}}
-                        @if(request()->path() == $route) 
+                        @if(request()->path() == $route)
                             @if ($LOneDetails["collapsed"])
                                 show
                             @else
-                                active 
+                                active
                             @endif
-                        @endif 
+                        @endif
                     @endforeach ">
                     <a class="nav-link" @if($LOneDetails["collapsed"]) href="#{{ $LOneDetails["href"] }}" role="button"  data-toggle="collapse"  @else href="{{ route($LOneDetails["href"]) }}" @endif >
                         <i class="material-icons">{{ $LOneDetails["icon"] }}</i>
@@ -139,15 +139,15 @@
                         <div id="{{ $LOneDetails["href"] }}" class="collapse " >
                             <ul class="nav">
                                 @foreach ($LOneDetails["pages"] as $LTwoTitle => $LTwoDetails) {{-- Strat Level One Colapse --}}
-                                    <li class="nav-item 
+                                    <li class="nav-item
                                         @foreach ($LTwoDetails["routes"] as $route) {{-- Route active for Level one Of Sidebar --}}
-                                            @if(request()->path() == $route) 
+                                            @if(request()->path() == $route)
                                                 @if ($LTwoDetails["collapsed"])
                                                     show
                                                 @else
-                                                    active 
+                                                    active
                                                 @endif
-                                            @endif 
+                                            @endif
                                         @endforeach">
                                         <a class="nav-link"  href="{{ route($LTwoDetails["href"]) }}">{{ $LTwoTitle }}</a>
                                     </li>
@@ -159,7 +159,7 @@
                 </li>
             @endforeach {{-- End of Level one Of Sidebar (|) --}}
 
-            
+
             <!-- your sidebar here -->
         </ul>
     </div>

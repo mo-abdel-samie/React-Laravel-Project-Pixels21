@@ -34,7 +34,7 @@ function NavbarComponent() {
                         <ul className="navbar-nav ml-auto">
                             <NavBarLink title="Home"      path="/home" />
                             <NavBarLink title="About"     path="/about" />
-                            <NavBarLink title="Courses"   path="/courses/category=all" />
+                            <NavBarLink title="Courses"   path="/courses/all" />
                             <NavBarLink title="Projects"  path="/project-contest" />
                             <NavBarLink title="Blogs"     path="/blogs" />
                             <NavBarLink title="Events"    path="/pixels-events" />

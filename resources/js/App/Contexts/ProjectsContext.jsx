@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import axios from "axios";
+import {Api} from "../Api";
 
 import * as TYPES from "./types";
 
@@ -16,13 +16,13 @@ const ProjectsState = (props) => {
 
   const getAllProjects = async () => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/projects`);
+    const { data } = await Api.get(`/projects`);
     console.log(data);
     dispatch({ type: TYPES.GET_ALL_PROJECTS, payload: data });
   };
   const getProjectById = async (id) => {
     dispatch({ type: TYPES.SET_LOADING });
-    const { data } = await axios.get(`/projects/get-project-byId/${id}`);
+    const { data } = await Api.get(`/projects/get-project-byId/${id}`);
     console.log(data);
     dispatch({ type: TYPES.GET_PROJECT_BY_ID, payload: data });
   };

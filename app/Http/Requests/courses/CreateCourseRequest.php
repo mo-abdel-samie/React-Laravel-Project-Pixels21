@@ -24,17 +24,18 @@ class CreateCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'              =>'required|string',
-            'category_id'       =>'required|integer',
-            'rate'              =>'required|numeric|min:0|max:10',
-            'image'             =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-            'header_image'      =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
-            'header_desc'       =>'required|string',
-            'description'       =>'required|string',
-            'share_links.*'     =>'required|url',
-            'content.*'         =>'required|string',
-            'includes_titles.*' =>'required|string',
-            'includes_icons.*'  =>'required|string',
+            'name'                =>'required|string',
+            'category_id'         =>'required|integer',
+            'rate'                =>'required|numeric|min:0|max:10',
+            'image'               =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+            'header_image'        =>'required|file|image|mimes:jpg,jpeg,png,svg,gif|max:5000',
+            'header_desc'         =>'required|string',
+            'description'         =>'required|string',
+            'share_links_urls.*'   =>'required|url',
+            'share_links_icons.*' =>'required|string',
+            'content.*'           =>'required|string',
+            'includes_titles.*'   =>'required|string',
+            'includes_icons.*'    =>'required|string',
         ];
     }
 
@@ -57,8 +58,10 @@ class CreateCourseRequest extends FormRequest
             'header_desc.string'            =>'header_desc must be string',
             'description.required'          =>'description is required',
             'description.string'            =>'description must be string',
-            'share_links.*.required'        =>'share_links is required',
-            'share_links.*.string'          =>'share_links must be string',
+            'share_links_urls.*.required'   =>'This field is required',
+            'share_links_urls.*.url'        =>'This field must be Url',
+            'share_links_icons.*.required'  =>'This field is required',
+            'share_links_icons.*.string'    =>'This field must be string',
             'content.*.required'            =>'content is required',
             'content.*.string'              =>'content must be string',
             'includes_titles.*.required'    =>'includes_titles is required',
