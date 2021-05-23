@@ -7,17 +7,21 @@ import { CoursesContext } from "../Contexts/CoursesContext";
 function CoursesItem(props) {
   const path = '/images/courses-page/';
 
-  const {loading, courses, getCoursesByCategoryName, getCoursesByCategoryId} = useContext(CoursesContext);
+  const {loading, courses, getCoursesByCategoryId} = useContext(CoursesContext);
 
   useEffect(() => {
     if(props.match.params.category) {
-      getCoursesByCategoryName(props.match.params.category);
+      getCoursesByCategoryId(props.match.params.category);
     }
-    console.log(props.otherCourses);
+    // console.log(props.otherCourses);
   }, [props.match.params.category]);
 
-  // getCoursesByCategoryId(props.otherCourses);
-
+  // useEffect(() => {
+  //   if(course.category_id) {
+  //     getCoursesByCategoryId(course.category_id);
+  //   }
+  //   // console.log(props.otherCourses);
+  // }, [course]);
 
   return (
     <div className="courses-items">

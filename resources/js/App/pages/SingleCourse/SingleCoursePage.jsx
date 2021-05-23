@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Course from './Components/Course';
 import { withRouter } from 'react-router-dom';
 import Header from './Components/Header';
@@ -11,10 +11,14 @@ const SingleCoursePage = ({match}) => {
   const { loading, course, getCourseById } = useContext(CoursesContext);
   const { header_image, header_desc } = {...course.course_page};
 
+  // const [category_id, setcategory_id] = useState(null);
+
   useEffect(() => {
-    if(match.params.id)
+    if(match.params.id) {
       getCourseById(match.params.id);
+    }
   }, [match.params.id]);
+
 
   return (
     <>
@@ -29,7 +33,7 @@ const SingleCoursePage = ({match}) => {
       {course && !loading ? (
         <>
           <Header header_image={header_image} header_desc={header_desc} name={course.name}/>
-          <Course course={course} />
+          <Course />
         </>
       ) : null}
     </>

@@ -10,7 +10,7 @@ function Header({header_desc, header_image, name}) {
 
   return (
     <>
-      <header style={{"backgroundImage": "url("+`${header_image}`+")"}} className="page-header">
+      <header style={{"backgroundImage": "url("+`/${header_image}`+")"}} className="page-header">
         <div className="overlayer">
           <Row className="header-container mx-5 justify-content-between align-items-center">
             <Col lg={11} className="courses-header-info text-light w-auto">

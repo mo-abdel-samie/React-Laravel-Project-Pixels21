@@ -1,26 +1,30 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { RiTimer2Line } from 'react-icons/ri';
 import { AiOutlineUnlock } from 'react-icons/ai';
 import { FaRegArrowAltCircleRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaStar } from 'react-icons/fa';
 import CoursesItem from '../../../Components/CoursesItem';
 import {CoursesContext} from "../../../Contexts/CoursesContext";
 
 
 
-function Course({course}) {
+function Course(props) {
 
-    const { description,includes_titles, includes_icons, content, share_links_urls, share_links_icons, average_rate, } = {...course.course_page};
+  const { course, getCoursesByCategoryId } = useContext(CoursesContext);
+  const { description,includes_titles, includes_icons, content, share_links_urls, share_links_icons, average_rate, } = {...course.course_page};
 
-  //  useEffect(() => {
+   useEffect(() => {
+     if(props.match.params.id && props.match.params.id === course.id) {
+      getCoursesByCategoryId(course.category_id);
+     }
   //   if (props.match.params.id && props.match.params.id === id) {
   //     setIsActive(true);
   //   } else {
   //     setIsActive(false);
   //   }
-  // }, [activeCourse]);
+  }, []);
 
 
   return (
@@ -94,7 +98,7 @@ function Course({course}) {
         <Container>
           <h2 className="mb-4 other-courses-title">Other Courses You May Like</h2>
             {course.category_id ? (
-                <CoursesItem otherCourses={course.category_id} />
+              <CoursesItem />
             ) : null}
         </Container>
       </div>
@@ -103,4 +107,4 @@ function Course({course}) {
   )
 }
 
-export default Course;
+export default withRouter(Course);

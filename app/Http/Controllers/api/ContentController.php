@@ -68,20 +68,24 @@ class ContentController extends Controller
         return $this->returnData('categories', $categories, 'data returned');
     }
     // Courses Of Category Name
-    public function getCoursesByCategoryName(Request $request, $category) {
-        if($category === 'all') {
-            $courses = Course::all();
-        } else {
-            $category = Category::where('name', $category)->get()[0];
-            $courses = $category->courses;
-        }
-        return $this->returnData('courses', $courses, 'data returned');
-    }
+    // public function getCoursesByCategoryName(Request $request, $category) {
+    //     if($category === 'all') {
+    //         $courses = Course::all();
+    //     } else {
+    //         $category = Category::where('name', $category)->get()[0];
+    //         $courses = $category->courses;
+    //     }
+    //     return $this->returnData('courses', $courses, 'data returned');
+    // }
 
     // Courses Of Category id
     public function getCoursesByCategoryId(Request $request, $id) {
-        $category = Category::find($id);
-        $courses = $category->courses;
+        if($id === "all") {
+            $courses = Course::all();
+        } else {
+            $category = Category::find($id);
+            $courses = $category->courses;
+        }
         // $courses = Course::where('category_id', $category->id);
         return $this->returnData('courses', $courses, 'data returned');
     }

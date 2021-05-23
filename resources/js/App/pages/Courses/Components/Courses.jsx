@@ -12,7 +12,6 @@ const Courses = () => {
 
   useEffect(() => {
     getCategories();
-    console.log('a');
   }, []);
 
 
@@ -35,10 +34,13 @@ const Courses = () => {
             </Col>
           ) : (
             <ul className="nav my-4 justify-content-center">
+              <li className="nav-item mx-2">
+                  <NavLink to={ "/courses/all" } activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">all</NavLink>
+              </li>
               {categories.map((category, index)=> {
                 return (
                   <li key={index} className="nav-item mx-2">
-                    <NavLink to={"/courses/"+category.name} activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category.name}</NavLink>
+                    <NavLink to={ "/courses/"+category.id } activeClassName="active" className="course-tab text-center d-inline-block rounded-circle">{category.name}</NavLink>
                   </li>
                 );
               })}

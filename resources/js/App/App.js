@@ -42,21 +42,26 @@ class App extends React.Component {
           <Navbar />
           <ToastContainer />
           <Switch>
-            <Route path="/home">                       <HomePage />                                             </Route>
+            <Route path="/home">                       <BlogsState><HomePage /></BlogsState>                    </Route>
+            
             <Route path="/about">                      <AboutPage />                                            </Route>
 
             <Route path="/courses/:category">          <CoursesState><CoursesPage /></CoursesState>             </Route>
             <Route path="/course/:id">                 <CoursesState><SingleCoursePage /></CoursesState>        </Route>
 
+            <Route path="/blogs">                      <BlogsState><Blogs /></BlogsState>                       </Route>
+            <Route path="/blog/:id">                   <BlogsState><Blog /></BlogsState>                        </Route>
+            
             <Route path="/project-contest">            <ProjectsState><ProjectsContst /></ProjectsState>        </Route>
             <Route path="/project/:id">                <ProjectsState><Project /></ProjectsState>               </Route>
 
-            <Route path="/blogs">                      <BlogsState><Blogs /></BlogsState>                       </Route>
-            <Route path="/blog/:id">                   <BlogsState><Blog /></BlogsState>                        </Route>
 
             <Route path="/pixels-events">              <EventsPage />                                           </Route>
+            
             <Route path="/magazine">                   <Magazine />                                             </Route>
+            
             <Redirect exact from="/" to="/home" />
+            
             <Route >
               <Error />
             </Route>

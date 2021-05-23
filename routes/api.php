@@ -36,7 +36,7 @@ Route::group(['middleware'=>['api']], function () {
 
     Route::get('/categories', [ContentController::class,'getCategories']);
     Route::group(['prefix'=>'courses'], function () {
-        Route::get('/category-name/{name}', [ContentController::class,'getCoursesByCategoryName']);
+        // Route::get('/category-name/{name}', [ContentController::class,'getCoursesByCategoryName']);
         Route::get('/category-id/{id}', [ContentController::class,'getCoursesByCategoryId']);
         Route::get('/get-course-byId/{id}', [ContentController::class,'getSingleCourse']);
     });
