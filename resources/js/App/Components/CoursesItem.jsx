@@ -10,13 +10,13 @@ function CoursesItem(props) {
   const {loading, courses, getCoursesByCategoryName, getCoursesByCategoryId} = useContext(CoursesContext);
 
   useEffect(() => {
-      // if(props.match.params.category) {
-      //     getCoursesByCategoryName(props.match.params.category);
-      // }
-
+    if(props.match.params.category) {
+      getCoursesByCategoryName(props.match.params.category);
+    }
     console.log(props.otherCourses);
   }, [props.match.params.category]);
 
+  // getCoursesByCategoryId(props.otherCourses);
 
 
   return (

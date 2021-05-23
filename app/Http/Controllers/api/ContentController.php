@@ -57,8 +57,8 @@ class ContentController extends Controller
         return $this->returnData('blogs', $blogs, 'data returned');
     }
     /// Single Blog
-    public function getSingleBlog(Request $request) {
-        $blog = Blog::find($request->id);
+    public function getSingleBlog(Request $request, $id) {
+        $blog = Blog::find($id);
         return $this->returnData('blog', $blog, 'data returned');
     }
 
@@ -69,8 +69,12 @@ class ContentController extends Controller
     }
     // Courses Of Category Name
     public function getCoursesByCategoryName(Request $request, $category) {
-        $category = Category::where('name', $category)->get()[0];
-        $courses = $category->courses;
+        if($category === 'all') {
+            $courses = Course::all();
+        } else {
+            $category = Category::where('name', $category)->get()[0];
+            $courses = $category->courses;
+        }
         return $this->returnData('courses', $courses, 'data returned');
     }
 

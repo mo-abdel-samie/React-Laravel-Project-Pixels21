@@ -31,7 +31,7 @@ Route::group(['middleware'=>['api']], function () {
 
     Route::group(['prefix'=>'blogs'], function () {
         Route::get('/all', [ContentController::class,'getAllBlogs']);
-        Route::get('/get-blog-byId', [ContentController::class,'getSingleBlog']);
+        Route::get('/get-blog-byId/{id}', [ContentController::class,'getSingleBlog']);
     });
 
     Route::get('/categories', [ContentController::class,'getCategories']);

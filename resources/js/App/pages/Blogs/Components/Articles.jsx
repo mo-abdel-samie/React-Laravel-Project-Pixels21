@@ -1,79 +1,88 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Aos from "aos";
 import { Link } from 'react-router-dom';
-import { axios } from '../../../axios'; 
+import {Col, Container, Row, Spinner} from "react-bootstrap";
+import {BlogsContext} from "../../../Contexts/BlogsContext";
 
 
 export default function Articles() {
 
-    const [articles, setArticles] = useState(0);
     const [lastArticle, setLastArticle] = useState(0);
 
-    useEffect(() => {    
+    const { loading, articles, getAllBlogs } = useContext(BlogsContext);
+
+    useEffect(() => {
         Aos.init({duration: 2000});
-
-        (async () => {
-            const { data }  = await axios.get('/articles');
-            setArticles( data.articles );
-            setLastArticle( data.articles[data.articles.length - 1]);
-        })();
-
+        getAllBlogs();
+        setLastArticle( articles[articles.length-1]);
     }, []);
 
     return (
         <section className="articles overflow-hidden">
-            <div className = " container">
-                <div className="row">
-                    <div className="col-12 py-3 pt-5">
-                        <div className="pixels-word" style={{top:"-3px"}}>Pixels</div>
-                        <h2>Articles</h2>
-                    </div>
-                    
-                    <div data-aos="fade-right" className = "col-lg-6  ">
-                        <img alt="pixels articel" src={`/images/${lastArticle.img}`} className = "m-2 img-fluid rounded" />
-                    </div>
+            <Container className = " container">
+                {loading && (
+                    <Col xs={12}>
+                        <Spinner />
+                    </Col>
+                )}
 
-                    <div data-aos="fade-left" className = "col-lg-6 d-flex pl-5 align-items-center">
-                        <div>
-                            <h3>{lastArticle.title} </h3>
-                            <small>Outher : {lastArticle.outher} </small>
-                            <p>
-                                {lastArticle.sub_title}
-                            </p>
-                            <div className = "mt-4">
-                                <Link to={`/blog/${lastArticle.id}`} className="btn btn-outline-info rounded-pill">Read More</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {articles.length === 0 && !loading ? (
+                    <Col xs={12}>
+                        <h2 className="not-found text-danger text-center"> Articles Not Found </h2>
+                    </Col>
+                ) : (
+                  <>
+                  {/*<Row className="">*/}
+                  {/*    <Col xs={12} className="py-3 pt-5">*/}
+                  {/*        <div className="pixels-word" style={{top:"-3px"}}>Pixels</div>*/}
+                  {/*        <h2>Articles</h2>*/}
+                  {/*    </Col>*/}
 
-                <div className="row overflow-hidden py-3">
-                    <div className="col-12">
-                        <h3>Latest Articles</h3>
-                    </div>
+                  {/*    <Col lg={6} data-aos="fade-right" className = " ">*/}
+                  {/*        <img alt="pixels article" src={`/images/${lastArticle.image}`} className = "m-2 img-fluid rounded" />*/}
+                  {/*    </Col>*/}
 
-                    {(articles !==0 )? 
-                        articles.map((article , index)=>(
-                            <div key={index} data-aos="fade-up" className="col-lg-4">
-                                <div className="card">
-                                    <img alt="pixels articel" className="card-img-top" src={`/images/${article.img}`} />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{article.title}</h5> 
-                                        <small>Outher : {article.outher}</small>
-                                        <p className="card-text">
-                                            {article.sub_title}
-                                        </p>
-                                        <div className = "mt-4">
-                                            <Link to={`/blog/${article.id}`} className="btn btn-outline-info rounded-pill">Read More</Link>
-                                        </div>                                    
-                                    </div>
-                                </div>
-                            </div>
-                    )) : null }
-                    
-                </div>
+                  {/*    <Col lg={6} data-aos="fade-left" className = "d-flex pl-5 align-items-center">*/}
+                  {/*        <div>*/}
+                  {/*            <h3>{lastArticle.title} </h3>*/}
+                  {/*            <small>Author : {lastArticle.author} </small>*/}
+                  {/*            <p>*/}
+                  {/*                {lastArticle.subtitle}*/}
+                  {/*            </p>*/}
+                  {/*            <div className = "mt-4">*/}
+                  {/*                <Link to={`/blog/${lastArticle.id}`} className="btn btn-outline-info rounded-pill">Read More</Link>*/}
+                  {/*            </div>*/}
+                  {/*        </div>*/}
+                  {/*    </Col>*/}
+                  {/*</Row>*/}
 
-            </div>
+                  <Row className="row overflow-hidden py-3">
+                      <Col xs={12}>
+                          <h3>Latest Articles</h3>
+                      </Col>
+
+                      {articles.map((article , index)=>(
+                          <Col lg={4} key={index} data-aos="fade-up">
+                              <div className="card">
+                                  <img alt="pixels article" className="card-img-top" src={`./${article.img}`} />
+                                  <div className="card-body">
+                                      <h5 className="card-title">{article.title}</h5>
+                                      <small>author : {article.author}</small>
+                                      <p className="card-text">
+                                          {article.subtitle}
+                                      </p>
+                                      <div className = "mt-4">
+                                          <Link to={`/blog/${article.id}`} className="btn btn-outline-info rounded-pill">Read More</Link>
+                                      </div>
+                                  </div>
+                              </div>
+                          </Col>
+                      ))}
+                  </Row>
+                  </>
+                )}
+
+            </Container>
         </section>
     )
 }

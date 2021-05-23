@@ -11,6 +11,7 @@ import {CoursesContext} from "../../../Contexts/CoursesContext";
 
 
 function Course({course}) {
+
     const { description,includes_titles, includes_icons, content, share_links_urls, share_links_icons, average_rate, } = {...course.course_page};
 
   //  useEffect(() => {
@@ -92,7 +93,9 @@ function Course({course}) {
       <div className="other-courses py-120">
         <Container>
           <h2 className="mb-4 other-courses-title">Other Courses You May Like</h2>
-          <CoursesItem otherCourses={course.category_id} />
+            {course.category_id ? (
+                <CoursesItem otherCourses={course.category_id} />
+            ) : null}
         </Container>
       </div>
     </section>

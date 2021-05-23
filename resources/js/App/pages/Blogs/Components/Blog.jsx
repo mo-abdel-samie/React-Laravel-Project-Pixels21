@@ -1,43 +1,49 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, {useContext, useEffect, useState} from 'react'
+import { useParams, withRouter } from 'react-router-dom';
 import Header from './Header';
 import  Aos  from 'aos';
-import { axios } from '../../../axios';
+import {BlogsContext} from "../../../Contexts/BlogsContext";
+import {Col, Row, Spinner, Container} from "react-bootstrap";
 
-export default function Blog() {
+function Blog(props) {
 
-    let { id } = useParams();
-    const [article, setArticle] = useState(null);
+    // let { id } = useParams();
+    const {loading, article, getBlogById} = useContext(BlogsContext);
 
     useEffect(() => {
         Aos.init({duration: 2000});
-
-        (async () => {
-            let object = {
-                id : id
-            }
-            const { data }  = await axios.post('/article-by-id',object);
-            setArticle( data.article );
-        })();
-
     }, []);
+
+    useEffect(() => {
+        if(props.match.params.id) {
+            getBlogById(props.match.params.id);
+        }
+    }, [props.match.params.id]);
 
 
     return (
         <>
             <Header />
 
-            {
+            {loading && (
+                <Col xs={12}>
+                    <Spinner />
+                </Col>
+            )}
 
-                article !==null?
-                <div className=" container pt-5">
-                    <div className="row">
-                        <div className="col-lg-8">
+            {!article && !loading ? (
+                <Col xs={12}>
+                    <h2 className="not-found text-danger text-center"> Article Not Found </h2>
+                </Col>
+            ):(
+                <Container className="pt-5">
+                    <Row className="">
+                        <Col lg={8} className="">
                             <div className="project_main_details">
                                 <h2>{article.title}</h2>
-                                <small>{article.outher}</small>
+                                <small>{article.author}</small>
                                 <p className="mb-3">
-                                    {article.sub_title}
+                                    {article.subtitle}
                                 </p>
 
                                 {article.img !== null?
@@ -55,17 +61,16 @@ export default function Blog() {
                                 }
 
                                 <p>
-                                    {article.body}
+                                    {article.content}
                                 </p>
                             </div>
 
-                        </div>
-                    </div>
-                </div>
-                :
-
-                "Loading....."
-            }
+                        </Col>
+                    </Row>
+                </Container>
+            )}
         </>
     )
 }
+
+export default withRouter(Blog);

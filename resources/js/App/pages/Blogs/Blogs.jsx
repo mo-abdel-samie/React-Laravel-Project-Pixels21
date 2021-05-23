@@ -15,12 +15,7 @@ export default function Blogs() {
         <>
             <Header />
 
-            { flag === false ?
-                <Articles />
-                :
-                <Videos />
-            } 
-            
+            { flag === false ? <Articles /> : <Videos />}
         </>
     )
 }

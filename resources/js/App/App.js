@@ -5,12 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import App from './App';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,23 +42,21 @@ class App extends React.Component {
           <Navbar />
           <ToastContainer />
           <Switch>
-            <Route path="/home">                         <HomePage />                </Route>
-            <Route path="/about">                        <AboutPage />               </Route>
-            <CoursesState>
-              <Route path="/courses/:category">     <CoursesPage />             </Route>
-              <Route path="/course/:id">                 <SingleCoursePage />        </Route>
-            </CoursesState>
-            <ProjectsState>
-              <Route path="/project-contest">            <ProjectsContst />          </Route>
-              <Route path="/project/:id">                <Project />                 </Route>
-            </ProjectsState>
-            <BlogsState>
-              <Route path="/blogs">                      <Blogs />                   </Route>
-              <Route path="/blog/:id">                   <Blog />                    </Route>
-            </BlogsState>
-            <Route path="/pixels-events">                <EventsPage />              </Route>
-            <Route path="/magazine">                     <Magazine />                </Route>
-            <Redirect exact from="/" to="/home" /> 
+            <Route path="/home">                       <HomePage />                                             </Route>
+            <Route path="/about">                      <AboutPage />                                            </Route>
+
+            <Route path="/courses/:category">          <CoursesState><CoursesPage /></CoursesState>             </Route>
+            <Route path="/course/:id">                 <CoursesState><SingleCoursePage /></CoursesState>        </Route>
+
+            <Route path="/project-contest">            <ProjectsState><ProjectsContst /></ProjectsState>        </Route>
+            <Route path="/project/:id">                <ProjectsState><Project /></ProjectsState>               </Route>
+
+            <Route path="/blogs">                      <BlogsState><Blogs /></BlogsState>                       </Route>
+            <Route path="/blog/:id">                   <BlogsState><Blog /></BlogsState>                        </Route>
+
+            <Route path="/pixels-events">              <EventsPage />                                           </Route>
+            <Route path="/magazine">                   <Magazine />                                             </Route>
+            <Redirect exact from="/" to="/home" />
             <Route >
               <Error />
             </Route>

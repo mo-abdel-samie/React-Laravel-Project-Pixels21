@@ -9,6 +9,7 @@ const CoursesState = (props) => {
     loading: false,
     categories: [],
     courses: [],
+    otherCourses: [],
     course: {},
   };
 
@@ -51,6 +52,7 @@ const CoursesState = (props) => {
       value={{
         categories: state.categories,
         courses: state.courses,
+        otherCourses: state.otherCourses,
         course: state.course,
         loading: state.loading,
         getCategories,
@@ -78,10 +80,15 @@ const courseReducer = (state, action) => {
         loading: false,
       };
     case TYPES.GET_COURSES_BY_CATEGORY_NAME:
+        return {
+            ...state,
+            courses: action.payload ? action.payload : [],
+            loading: false,
+        };
     case TYPES.GET_COURSES_BY_CATEGORY_ID:
       return {
         ...state,
-        courses: action.payload ? action.payload : [],
+        otherCourses: action.payload ? action.payload : [],
         loading: false,
       };
     case TYPES.GET_COURSE_BY_ID:
